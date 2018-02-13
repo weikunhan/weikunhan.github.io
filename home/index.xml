@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Weikun Han</title>
+    <link>https://weikunhan.github.io/home/</link>
+    <description>Recent content in Homes on Weikun Han</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Weikun Han</copyright>
+    <lastBuildDate>Mon, 20 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://weikunhan.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recent News</title>
+      <link>https://weikunhan.github.io/home/hero/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/hero/</guid>
+      <description>🐒 October 2017, Undergraduate research work contribute a paper about nanotechnology won the Best Student Paper Award at IEEE NANO 2017.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://weikunhan.github.io/home/about/</link>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/about/</guid>
+      <description>Biography I am a M.S. student in Department of Electrical Engineering, UCLA. My research is interested in spans the areas of Natural Language Processing and Machine Learning. Currently, I am researching learning to search approach to solve structure prediction problems. I also working on implementing a natural language processing library in PyTorch about transition-based dependency parsers.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://weikunhan.github.io/home/publications_selected/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://weikunhan.github.io/home/publications/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://weikunhan.github.io/home/talks/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://weikunhan.github.io/home/projects/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://weikunhan.github.io/home/teaching/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/teaching/</guid>
+      <description>This is an example of using the custom widget to create your own homepage section.
+I am a teaching instructor for the following courses at University X:
+ CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
+    </item>
+    
+    <item>
+      <title>Honors and Awards</title>
+      <link>https://weikunhan.github.io/home/honors_awards/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/honors_awards/</guid>
+      <description>🐒 Best Student Paper Award, The 17th IEEE International Conference on Nanotechnology, October 2017
+🐒 Magna Cum Laude Honor, Iowa State University, December 2015
+🐒 Dean&amp;rsquo;s List Honor, Iowa State University, December 2015</description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://weikunhan.github.io/home/posts/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>https://weikunhan.github.io/home/tags/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://weikunhan.github.io/home/contact/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://weikunhan.github.io/home/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

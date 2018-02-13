@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weikun Han on Weikun Han</title>
+    <link>https://weikunhan.github.io/</link>
+    <description>Recent content in Weikun Han on Weikun Han</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Weikun Han</copyright>
+    <lastBuildDate>Mon, 20 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Don&#39;t Get Kicked!</title>
+      <link>https://weikunhan.github.io/project/do_not_get_kicked/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 -0800</pubDate>
+      
+      <guid>https://weikunhan.github.io/project/do_not_get_kicked/</guid>
+      <description>
+
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1-introduction&#34;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-understand-the-problem&#34;&gt;2. Understand the Problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3-get-the-data&#34;&gt;3. Get the data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-data-exploration&#34;&gt;4. Data Exploration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#5-data-preprocessing&#34;&gt;5. Data Preprocessing&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#data-cleaning&#34;&gt;Data cleaning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#handing-test-and-categorical-attributes&#34;&gt;Handing test and categorical attributes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#custom-transformer&#34;&gt;Custom transformer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#feature-scaling&#34;&gt;Feature scaling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#transformation-pipelines&#34;&gt;Transformation pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#6-model-training&#34;&gt;6. Model Training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#7-model-tuning-and-evaluations&#34;&gt;7. Model Tuning and Evaluations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
+&lt;h1 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h1&gt;
+
+&lt;p&gt;An auto dealership often purchases a used car at an auto auction. This used car might have serious issues that cannot sell to customers. The auto community calls these unfortunate purchases &amp;ldquo;kicks.&amp;rdquo; The purpose of this project is to build a model to predict if the car purchased at the Auction is a Kick (bad buy). All project data come from the &lt;a href=&#34;https://www.kaggle.com/c/DontGetKicked/data&#34; target=&#34;_blank&#34;&gt;Kaggle&lt;/a&gt;. I propose to use logistic regression as the main algorithm to create the classifier. After training and tuning hyperparameter of the classifier, the area under the curve (AUC) of my classifier is 0.73. The F1 score of my classifier is 0.36. The accuracy of the prediction on the testing dataset is 96%. I also provide a well-documented &lt;a href=&#34;https://github.com/weikunhan/Do-Not-Get-Kicked/blob/master/do_not_get_kicked.ipynb&#34; target=&#34;_blank&#34;&gt;IPython file&lt;/a&gt; on Github to explain how to step-by-step analyze this project.&lt;/p&gt;
+
+&lt;p&gt;In this project, I will follow steps from Hands-On Machine Learning with Scikit-Learn and TensorFlow. This book provides an excellent strategy how to do an end-to-end machine learning project. I highly recommend this strategy for the machine learning project. I summary general processes for a machine learning project in this report, the process can split into seven steps: &lt;strong&gt;understand the problem, get the data, data exploration, data preprocessing, model training, and model tuning and evaluations.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-understand-the-problem&#34;&gt;2. Understand the Problem&lt;/h1&gt;
+
+&lt;p&gt;The project target is to predict if the car purchased at the Auction is a Kick (bad buy).Therefore, I frame this project as a supervised classification problem. Furthermore, this project is a binary classification problem because it predicts help a dealership to identify the purchases is a bad buy or a good buy.&lt;/p&gt;
+
+&lt;p&gt;For the binary classification problem, there are three standard methods to evaluate the performance of the model. First, I evaluate the performance of a classifier using F1 score, because the F1 score is the combination of precision and recall, which is the harmonic mean of precision and recall. Also, I evaluate the performance of classifier use AUC of receiver operating characteristic (ROC) curve, because the ROC curve is another common tool used with binary classifiers. Finally, I evaluate the prediction accuracy of the testing dataset.&lt;/p&gt;
+
+&lt;p&gt;To sum up, after framing the problem (make an assumption) and select methods to evaluate the model, I can start to get data and to look data information.&lt;/p&gt;
+
+&lt;h1 id=&#34;3-get-the-data&#34;&gt;3. Get the data&lt;/h1&gt;
+
+&lt;p&gt;All data come from Kaggle, I download data and use Pandas to load data. However, before directly using Pandas, I write a small class with some loading function to load data (the codes are in IPython file).&lt;/p&gt;
+
+&lt;p&gt;Before splitting data into the training and test datasets, I need understand what exactly the data it is. First, I check original data and see the header of data in figure 1.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_1.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows the top 5 rows and header of the data.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Here, we can see some feature of data, but it is not enough. Next, I want to know more data details in figure 2 such as total rows of data, numbers of features of data, the type of each feature of data.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_2.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows details information about this data.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;From the output, I can see this data has total 34 features, 72983 rows of data, 19 numeric data, and 16 text data. Then, in figure 3, I know each text data feature, and majority label is “true” for the data.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_3.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows each column&amp;#39;s data distribution.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In figure 4, I want to know more statistical attributes like the mean of each numeric data or the standard deviation of each numeric data.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_4.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows each column’s data statistical attributes.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Sometimes, people may prefer to visualize the data distribution, for example, in figure 5. Now I write a class to plot data and save graphs into the target location. The MatPlotlib already have the plot function, but it is a good habit to write a function to combination plot and label, which can reuse later.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_5.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;provides diagrams to display data distribution of all numeric columns.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;From the “IsBadBuy” diagram, I can also see the majority label is “true,” which is good for us making classification on the test dataset. Also, I see the “VehYear” and “VehicleAge” diagrams have the normal distribution, which means that I can use those two features as the critical features to make a model (have more eigenvalue to make more accuracy model).&lt;/p&gt;
+
+&lt;p&gt;To summary, after I understand much information about the data, I can split the data into training and test dataset. However, I need not split datasets because Kaggle already provides training (60%) and test (40%) dataset. If the data need to split, the Scikit-Learn provide a few functions to split datasets into multiple subsets in various ways.)&lt;/p&gt;
+
+&lt;h1 id=&#34;4-data-exploration&#34;&gt;4. Data Exploration&lt;/h1&gt;
+
+&lt;p&gt;So far I have only taken a quick glance at the data to get a general understanding of the kind of data I am manipulating. Now, I need to go deep to check more about data. First, I need put the test dataset aside. Since the training dataset is not too large, I can efficiently compute the standard correlation coefficient (also called Pearson&amp;rsquo;s r) between every pair of attributes, in Figure 6.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_6.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows standard correlation coefficient.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;From the correlation, I see the “VehYear” and “VehicleAge” is the strongest relation with “IsBadBuy.”&lt;/p&gt;
+
+&lt;p&gt;One last thing I want to do before actually preparing the data for machine learning algorithms is to try out various attribute combinations. In my opinion, the more miles per year driver drive; the more likely driver will more cause a kick car. Thus, I can create new attribute “miles per year,” and I recheck the standard correlation coefficient in figure 7.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_7.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows standard correlation coefficient after adding a custom attribute.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now, it’s time to prepare the data for my machine learning algorithms.&lt;/p&gt;
+
+&lt;h1 id=&#34;5-data-preprocessing&#34;&gt;5. Data Preprocessing&lt;/h1&gt;
+
+&lt;p&gt;The best way to prepare data is to use Scikit-Learn’s Pipeline to do it. However, before I create the full pipeline, I need figure out how to create transformer for each part. It includes five steps: data cleaning, handing test and categorical attributes, custom transformer, feature scaling, and transformation pipelines.&lt;/p&gt;
+
+&lt;h2 id=&#34;data-cleaning&#34;&gt;Data cleaning&lt;/h2&gt;
+
+&lt;p&gt;Many times, I noticed that some attributes have some missing values. I can accomplish these efficiently using Pandas&amp;rsquo; DataFrame to drop miss data. However, I believed that it would be a waste. I decided to implement the following rules: if the feature includes a continuous value, I will replace the missing value with the average of the feature over the other samples, and if the feature includes a discrete value, I will create a new value specifically to identify missing data. Here, Scikit-Learn provides a handy class to take care of missing values: Imputer.&lt;/p&gt;
+
+&lt;h2 id=&#34;handing-test-and-categorical-attributes&#34;&gt;Handing test and categorical attributes&lt;/h2&gt;
+
+&lt;p&gt;Earlier I left out many categorical attributes because those are a text attribute so I cannot compute its median. Most machine learning algorithms prefer to work with numbers, so let&amp;rsquo;s convert these text labels to numbers. The author of Hands-On Machine Learning with Scikit-Learn and TensorFlow provides a method to encoder these text labels. I can use this method to get one-hot encoding easily.&lt;/p&gt;
+
+&lt;h2 id=&#34;custom-transformer&#34;&gt;Custom transformer&lt;/h2&gt;
+
+&lt;p&gt;In previous, I need to add the custom attribute to the training dataset. Therefore, I want to create a custom transformer class to add this step to the pipeline.&lt;/p&gt;
+
+&lt;h2 id=&#34;feature-scaling&#34;&gt;Feature scaling&lt;/h2&gt;
+
+&lt;p&gt;Machine learning algorithms do not perform well when the numerical input attributes have very different scales. Therefore, I can use Scikit-Learn’s StandarScaler for standardization.&lt;/p&gt;
+
+&lt;h2 id=&#34;transformation-pipelines&#34;&gt;Transformation pipelines&lt;/h2&gt;
+
+&lt;p&gt;Finally, many data transformation steps need to execute in the right order. I can now create a full pipeline to prepare use Scikit-Learn’s Pipeline.&lt;/p&gt;
+
+&lt;h1 id=&#34;6-model-training&#34;&gt;6. Model Training&lt;/h1&gt;
+
+&lt;p&gt;Since our data is ready, I will start training models now. I will use three algorithms: Logistic Regression, Radom Forests, and Nonlinear SVM. First, I train model use Logistic Regression without tuning it. Moreover, I use 5-fold cross-validation to get the evaluation.  For Logistics Regression classifier without tuning, the F1 score is 0.37 and AUC is 0.72. The ROC curve is in the Figure 8.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_8.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;plots a ROC curve for the Logistics Regression classifier without tuning.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h1 id=&#34;7-model-tuning-and-evaluations&#34;&gt;7. Model Tuning and Evaluations&lt;/h1&gt;
+
+&lt;p&gt;Once Logistics Regression trains the model, I first evaluate the model&amp;rsquo;s performance. Next, I can use Scikit-Learn’s GridSearchCV to search the best hyperparameters for me.
+The result is in figure 9.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_9.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows model tuning setup and result.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Furthermore, I need to also look for variable importance, i.e., which variables have proved to be significant in determining the target variable. The result is in figure 10.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_10.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows variables’ importance.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Moreover, accordingly, I can shortlist the best variables and train the model again. Finally, I use different algorithms to train the model. In figure 11, I plot three ROC curve for different algorithms: Logistic Regression, Random Forests, and Nonlinear SVM.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_11.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;polts three ROC curve of different classifiers with tuning after modifying data features.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In the end, I will use those classifiers on test dataset to generate final classification.
+The result is the figure 12.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/project/do_not_get_kicked_12.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;shows a table to compare result for three classifiers.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h1 id=&#34;reference&#34;&gt;Reference&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Aurélien Géron. (2017). &lt;em&gt;Hands-On Machine Learning with Scikit-Learn and TensorFlow.&lt;/em&gt; Sebastopol, CA: O’Reilly Media, Inc.&lt;/li&gt;
+&lt;li&gt;Don’t Get Kicked! (2012) training &amp;amp; test [Data file]. Retrieved from &lt;a href=&#34;https://www.kaggle.com/c/DontGetKicked/data&#34; target=&#34;_blank&#34;&gt;https://www.kaggle.com/c/DontGetKicked/data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Albert, H., Robert R, &amp;amp; Xin, A.W. (2012). &lt;em&gt;Don’t Get Kicked - Machine Learning Predictions for Car Buying.&lt;/em&gt; Retrieved from &lt;a href=&#34;http://cs229.stanford.edu/proj2012/HoRomanoWu-KickedCarPrediction.pdf&#34; target=&#34;_blank&#34;&gt;http://cs229.stanford.edu/proj2012/HoRomanoWu-KickedCarPrediction.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Summary of Learning to Search for Dependencies</title>
+      <link>https://weikunhan.github.io/post/2017-11-13/</link>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 -0800</pubDate>
+      
+      <guid>https://weikunhan.github.io/post/2017-11-13/</guid>
+      <description>
+
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1-introduction&#34;&gt;1. Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-learning-to-search&#34;&gt;2. Learning to search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3-dependency-parsing-by-learning-to-search&#34;&gt;3. Dependency Parsing by Learning to Search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-experimental-results&#34;&gt;4. Experimental Results&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#5-related-works&#34;&gt;5. Related Works&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
+&lt;h1 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h1&gt;
+
+&lt;p&gt;Transition-based dependency parsers are a type of popular tool for solving structured prediction problems or joint prediction problems. There are many constructions for transition-based dependency parsers such as transition systems, feature engineering, neural-network predictors and the importance of training against a “dynamic oracle.” In short, those methods rely on the heuristic learning strategies.&lt;/p&gt;
+
+&lt;p&gt;In contrast to previous approaches, in this paper, they focus on building dependency parsers which have a compiler can automatically translate a simple specification of dependency parsing and labeled data into machine learning updates. In this way, dependency parsers can use machine learning technology to get more accuracy in complex prediction problems.&lt;/p&gt;
+
+&lt;p&gt;The credit assignment is an issue in complex prediction problems. There are two common ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The system may ignore the possibility that a previous prediction may have been wrong. Alternatively, ignore that different errors may have different costs (consequences). Alternatively, that train-time prediction may differ from the test-time prediction. These and other issues lead to statistical inconsistency: when features are not rich enough for perfect prediction the machine learning may converge suboptimally.&lt;/li&gt;
+&lt;li&gt;The system may use handcrafted credit assignment heuristics to cope with errors the underlying algorithm makes and the long-term outcomes of decisions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For some applications, for example, the dependency parsing, it can be much more complicated if applying two strategies.&lt;/p&gt;
+
+&lt;p&gt;In the paper, they show a learning to search compiler (or credit assignment compiler) can handle credit assignment when applied to dependency parsing. Moreover, the advantages are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The system automatically employs a cost sensitive learning algorithm instead of a multiclass learning algorithm, ensuring the model learns to avoid compounding errors.&lt;/li&gt;
+&lt;li&gt;The system automatically “rolls in” with the learned policy and “rolls out” the dynamic oracle insuring competition with the oracle.&lt;/li&gt;
+&lt;li&gt;Advanced machine learning techniques or optimization strategies are enabled with command-line flags with no additional implementation overhead, such as neural networks or “fancy” online learning.&lt;/li&gt;
+&lt;li&gt;The implementation is future-friendly: future compilers may yield a better parser.&lt;/li&gt;
+&lt;li&gt;Train/test asynchrony bugs are removed. Essentially, you only write the test-time “decoder” and the oracle.&lt;/li&gt;
+&lt;li&gt;The implementation is simple: This one is about 300 lines of C++ code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To sum up, the author explains the system in four parts: introducing solve structured prediction tasks using learning to search, implementing learning to search to solve dependency parsing, experimental result, and related work.&lt;/p&gt;
+
+&lt;h1 id=&#34;2-learning-to-search&#34;&gt;2. Learning to search&lt;/h1&gt;
+
+&lt;p&gt;Learning to search is a family of approaches for solving structured prediction problems or joint prediction problems. Learning to search includes many algorithms such as the incremental structured perceptron, SEARN, DAGGER, AGGREVATE, and others. On the whole, these algorithms have the similar framework, but their difference are in the rollin/rollout policy and the base learner.&lt;/p&gt;
+
+&lt;p&gt;In this paper, they build an efficient framework using imperative learning to search, in figure 1. In the framework, it includes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a “decoder” for the target structured prediction task (e.g., dependency parsing),&lt;/li&gt;
+&lt;li&gt;an annotation in the decoder that computes losses on the training data,&lt;/li&gt;
+&lt;li&gt;a reference policy on the training data that returns at any prediction point a “suggestion” as to an excellent action to take in that state.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To fully understand this proposed framework, we need back to the concept of the learning to search.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/post/2017-11-13_1.jpg&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;The workflow of the proposed framework.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Learning to search approaches solve structured prediction problems by (1) decomposing the production of the structured output regarding a specific search space (states, actions); and (2) learning hypotheses that control policy that takes actions in this search space. Figure 2 provides an example to illustrate the learning to search approach. In this example, it executes the program three times and able to explore three different trajectories and compute their losses.  The rollin policy determines the initial trajectory, the state R is the position of one-step deviations and the rollout policy is to complete the trajectory after a deviation. In brief, the learning to search first follows the learned policy to finds different predictions from the base learner, yields low Hamming loss and gets the reference policy.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/post/2017-11-13_2.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;A schematic of the search space implicitly defined by an imperative program.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;By varying the rollin/rollout policy and base learner, it can come up different algorithms. In this paper, their rollin=mixture of the learned and the reference (dynamic oracle) policies and rollout=reference (dynamic oracle) policy, and their base learner has varied options. In contrast, DAGGER uses the rollin=learned policy and the rollout=reference policy, and SEARN uses the rollin=rollout=stochastic mixture of learned and reference policies. Next, we will explore the implementation of the learning to search to solve dependency parsing.&lt;/p&gt;
+
+&lt;h1 id=&#34;3-dependency-parsing-by-learning-to-search&#34;&gt;3. Dependency Parsing by Learning to Search&lt;/h1&gt;
+
+&lt;p&gt;A transition-based dependency parser takes a sequence of actions and parses a sentence from left to right by maintaining a stack S, a buffer B, and a set of dependency arcs. An example in figure 3 whos a processing. To classify transition-based dependency parsers, we can learn from three aspects which are the transition system, the base learner, and the reference policy. There are three primary transition systems: arc-standard, arc-eager, arc-hybrid. For the base learner, it can be diverse such as perceptron, natural network, and SGD. As for the reference policy, there are greedy, beam search, and dynamic oracles.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/post/2017-11-13_3.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;An illustrative example of an arc-hybrid transition parser.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In this paper, they use arc-hybrid for the transition system, the natural network for the base learner (also try more powerful base learners), and dynamic oracles for the reference policy. The arc-hybrid includes three actions: SHIFT, REDUCE, and REDUCE-RIGHT. For others transition system, those have more actions than arc-hybrid. The fundamental principle of dynamic oracles is that for some transition systems there is more than one path that could lead to the gold tree. In contrast, for greedy parsing, we are only considering one of them, which is the one determined by the deterministic oracle. In short, all frameworks are similar as discussed in section 2, but the implementation can be much more comfortable.&lt;/p&gt;
+
+&lt;p&gt;In section 2, to implement a parser using the learning to search framework, we need to provide a decoder, a loss function, and reference policy. Therefore, the author provides six functions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GETVALIDACTION returns a set of valid actions that can be taken based on the current configuration.&lt;/li&gt;
+&lt;li&gt;GETFEAT extracts features based on the current configuration.&lt;/li&gt;
+&lt;li&gt;GETGOLDACTION  implements the dynamic Oracle&lt;/li&gt;
+&lt;li&gt;PREDICT   is a library call implemented in the learning to search system.&lt;/li&gt;
+&lt;li&gt;TRANS function implements the hybrid-arc transition system.&lt;/li&gt;
+&lt;li&gt;LOSS function is used to measure the distance between the predicted output and the gold annotation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To notice that, there are two LOSS functions, one for unlabeled dependency parser and other for labeled dependency parser.&lt;/p&gt;
+
+&lt;p&gt;Compare with other implementation, the learning to search compiler have two advantages for implementation: First, in the learning to search framework, there is no need to implement a learning algorithm. Second, learning to search provides a unified framework, which allows the library to serve common functions for ease of implementation.&lt;/p&gt;
+
+&lt;h1 id=&#34;4-experimental-results&#34;&gt;4. Experimental Results&lt;/h1&gt;
+
+&lt;p&gt;Experiments on standard English Penn Treebank and nine other languages from CoNLL-X show that the compiled parser is competitive with recently published results (see figure 4 and figure 5).
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/post/2017-11-13_4.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Parser settings.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://weikunhan.github.io/img/post/2017-11-13_5.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Unlabeled attachment scores (UAS) and labeled attachment scores (LAS).&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h1 id=&#34;5-related-works&#34;&gt;5. Related Works&lt;/h1&gt;
+
+&lt;p&gt;Some works use the learning to search approach to solve various other structured prediction problems, but these works are a unique setting under author’s unified learning framework. In conclusion, the learning to search compiler is the first work that develops a general programming interface for dependency parsing, or more broadly, for structured prediction.&lt;/p&gt;
+
+&lt;h1 id=&#34;reference&#34;&gt;Reference&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Kai-Wei Chang, He He, Hal Daume III, and John Langford. 2015a. Learning to Search for Dependencies. arXiv:1503.05615.&lt;/li&gt;
+&lt;li&gt;Ballesteros, Miguel. &amp;ldquo;Transition-based Dependency Parsing.&amp;rdquo; 2015. &lt;a href=&#34;http://demo.clab.cs.cmu.edu/fa2015-11711/images/b/b1/TbparsingSmallCorrection.pdf&#34; target=&#34;_blank&#34;&gt;PowerPoint presentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tape-based flexible metallic and dielectric nanophotonic devices and metamaterials</title>
+      <link>https://weikunhan.github.io/publication/publication4/</link>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 -0700</pubDate>
+      
+      <guid>https://weikunhan.github.io/publication/publication4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://weikunhan.github.io/talk/example-talk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0800</pubDate>
+      
+      <guid>https://weikunhan.github.io/talk/example-talk/</guid>
+      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
