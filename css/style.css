@@ -1657,6 +1657,9 @@ pre {
 .highlight.json .code:before {
   content: "JSON";
 }
+.highlight.diff .code:before {
+  content: "diff";
+}
 .highlight.html .code:before {
   content: "HTML";
 }
@@ -1728,6 +1731,12 @@ pre {
 .highlight pre .line,
 .highlight pre .params {
   color: rgba(85,85,85,0.9);
+}
+.highlight pre .line .addition {
+  color: #3fa33f;
+}
+.highlight pre .line .deletion {
+  color: #ee2b29;
 }
 .highlight pre .marked {
   background-color: rgba(254,213,66,0.4);
