@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Introduce the fundamental method to learn Pytorch APIs - Weikun Han&#39;s Website</title>
+  
+  
+    <meta name="description" content="“当你学会站在巨人的肩膀上，你突然发现可以看到更远的山川。“ - 韩劲谦">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover page half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Weikun Han</p>
+    
+    
+      <p class="subtitle">「Research Assistant Intern at Oregon State University」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>Home
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/publications"
+                
+                
+                id="publications">
+                <i class='fas fa-file-alt fa-fw'></i>Publications
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/projects"
+                
+                
+                id="projects">
+                <i class='fas fa-robot fa-fw'></i>Projects
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/courses"
+                
+                
+                id="courses">
+                <i class='fas fa-graduation-cap fa-fw'></i>Courses
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/awards"
+                
+                
+                id="awards">
+                <i class='fas fa-trophy fa-fw'></i>Awards
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/blogs"
+                
+                
+                id="blogs">
+                <i class='fas fa-book fa-fw'></i>Blogs
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/weikun_han_web_3.png'/>
+          
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>Home
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/publications
+                  
+                  
+                  
+                    id="publications"
+                  >
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/journal_publications
+                  
+                  
+                  
+                    id="publicationsjournal_publications"
+                  >
+                  Journal Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/conference_publications
+                  
+                  
+                  
+                    id="publicationsconference_publications"
+                  >
+                  Conference Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/projects
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-robot fa-fw'></i>Projects
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                Coming Soon
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/courses
+                  
+                  
+                  
+                    id="courses"
+                  >
+                  <i class='fas fa-graduation-cap fa-fw'></i>Courses
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/awards
+                  
+                  
+                  
+                    id="awards"
+                  >
+                  <i class='fas fa-trophy fa-fw'></i>Awards
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/blogs
+                  
+                  
+                  
+                    id="blogs"
+                  >
+                  <i class='fas fa-book fa-fw'></i>Blogs
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>Home
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/publications
+                  
+                  
+                  
+                    id="publications"
+                  >
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/journal_publications
+                  
+                  
+                  
+                    id="publicationsjournal_publications"
+                  >
+                  Journal Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/conference_publications
+                  
+                  
+                  
+                    id="publicationsconference_publications"
+                  >
+                  Conference Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/projects
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-robot fa-fw'></i>Projects
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                Coming Soon
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/courses
+                  
+                  
+                  
+                    id="courses"
+                  >
+                  <i class='fas fa-graduation-cap fa-fw'></i>Courses
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/awards
+                  
+                  
+                  
+                    id="awards"
+                  >
+                  <i class='fas fa-trophy fa-fw'></i>Awards
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/blogs
+                  
+                  
+                  
+                    id="blogs"
+                  >
+                  <i class='fas fa-book fa-fw'></i>Blogs
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="page" class="post white-box reveal shadow article-type-page" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/blogs/technologies_study/pytorch/index.html">
+      Introduce the fundamental method to learn Pytorch APIs
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/weikun_han_1.png">
+    <p>Weikun Han</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jul 1, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p><em>“当你学会站在巨人的肩膀上，你突然发现可以看到更远的山川。“ - 韩劲谦</em></p>
+<a id="more"></a>
+
+<h2 id="开门不见山"><a href="#开门不见山" class="headerlink" title="开门不见山"></a>开门不见山</h2><p>随着深度学习发展，深度学习的框架也层出不穷。现在最流行的深度学习框架应该非PyTorch莫属了。有数据显示，在2020的CVPR论文中PyTorch占比是TensorFlow 4 倍。从公司退来之后，终于有机会接触PyTorch。上手PyTorch之后，只能用两个子形容：真香。</p>
+<p>在过去工作的两年里，从令人跺脚的Caffe到后来快速稳定的TensorFlow，我一直对PyTorch带着有色眼镜。讲道理，之前的PyTorch还是更适合做研究，对于工业界的一整套东西（数据整合，模型训练，模型验证，模型服务）支持的并不是很理想。现在的PyTorch，可谓是深度学习框架的翘楚。首先，各种类的封装做的没话说，理解和自定义类非常简单。其次，API设计的非常人性，功能很全，使用起来非常方便。最后，官方文档写的很详细，官方教程很多，并且还有PyTorch社区帮忙回答各种问题。</p>
+<div class="note quote">
+            <p>PyTorch的接口是Python，但底层主要都是用C++实现的。PyTorch使用一种称之为 imperative/eager 的范式，即每一行代码都要求构建一个图以定义完整计算图的一个部分。即使完整的计算图还没有完成构建，我们也可以独立地执行这些作为组件的小计算图，这种动态计算图被称为define-by-run方法。- 机器之心</p>
+          </div>
+
+<p>上面这段摘自机器之心对PyTorch基本描述看起来很高大上，其实对同学入门PyTorch并没有太大帮助。但是因为上面这个设计理念，让PyTorch变的清新脱俗。因为大部分入门PyTorch的同学主要关心如何快速上手，所以，这里我就不再对这些高大上的设计理念展开更多的介绍。</p>
+<p>牛顿说过：“如果我看得更远一点的话，是因为我站在巨人的肩膀上”。 PyTorch之所以能变的如此流行，也是因为站在了巨人的肩上。PyTorch不是闭门造车，更不是从头一点一点开始。很多人说：“PyTorch的工作流程非常接近于Python的科学计算库NumPy”。如此说来，PyTorch站在了NumPy的肩膀上。后面的内容，我会说明为什么PyTorch站在了NumPy的肩膀上。</p>
+<p>由于PyTorch各类教程很多，我在最后列出了一些PyTorch学习资源，希望同学们对这些学习资源各取所需。这篇博客，我以PyTorch为例子，主要介绍一种快速上手大型项目的方法。希望这样的学习方法可以帮助到一些学生。</p>
+<h2 id="拨开迷雾见月明"><a href="#拨开迷雾见月明" class="headerlink" title="拨开迷雾见月明"></a>拨开迷雾见月明</h2><p>现在，如果你对PyTorch非常感兴趣，让我带你来走进PyTorch世界。那么，如何快速上手PyTorch，应对实战项目呢？</p>
+<ol>
+<li>看官方文档 </li>
+<li>看开源PyTorch项目</li>
+<li>看推荐PyTorch书籍</li>
+<li>上精品PyTorch网课</li>
+<li>大量练习写PyTorch代码！</li>
+</ol>
+<p>上面5点，最重要的是第四点。但是，一般来讲接触到一个陌生的东西，第一步是源自开源项目，然后开始看官方文档。那么现在就看一个例子 - 如何正确的自学成才。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+
+<p>很多开源PyTorch项目会看到上面的API。这也是PyTorch最重要的两个APIs。第一个API是torch， 基本是NumPy换了一个马甲，但是同时增加很多一个深度学习的框架应该有的基本功能。可以说，正式因为torch，才组建了如此高大上的深度学习的框架。我们可以用下面的例子来说明，让我们试试如何用torch实现torch.nn的功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">x = torch.tensor([<span class="number">-4.5</span>, <span class="number">0.7</span>, <span class="number">3.3</span>])</span><br><span class="line">y = torch.tensor([<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">1.</span>])</span><br><span class="line">h = nn.Sigmoid()</span><br><span class="line">criterion = nn.BCELoss()</span><br><span class="line">torch_nn_loss = criterion(h(x), y)</span><br><span class="line">print(<span class="string">'Logistic Regression Cross Entropy Loss use torch.nn: loss = &#123;&#125;'</span>.format(torch_nn_loss.item()))</span><br><span class="line"></span><br><span class="line">torch_loss = -(y * torch.log(torch.sigmoid(x)) + (<span class="number">1</span> - y) * torch.log(<span class="number">1</span> - torch.sigmoid(x))).mean()</span><br><span class="line">print(<span class="string">'Logistic Regression Cross Entropy Loss use torch: loss = &#123;&#125;'</span>.format(torch_loss.item()))</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码展示了一个分类问题损失函数 - 逻辑回归。其数学表达式如下：</p>
+<p>$$<br>\begin{equation}<br>J(\theta) = - \frac{1}{m} \sum_{i=1}^m \lbrack y_i \log(h_\theta(x_i)) + (1 - y_i) \log(1 - h_\theta(x_i)) \rbrack<br>\end{equation}<br>$$</p>
+<p>最后结果两边的计算结果都是1.884。从这里开始很明显的看出：用torch基本的算子可以实现torch.nn的功能。看到这里，是不是感到很惊讶，感觉自己可以去做一个深度学习的框架了？别急，如果直接用torch的基本的算子实现的各种函数功能，可能需要写上万行多余的代码。而且这样的代码，对后期的维护、功能扩展、代码的性能优化、和其他硬软件的兼容都是灾难的铺垫！所以，PyTorch的开发人员利用编程中很重要的基本思想 - 面向对象编程。这个可能你都不清楚的基本思想，加上套了马甲的NumPy。不仅实现了torch.nn，还实现了：</p>
+<ul>
+<li>torch.nn.functional</li>
+<li>torch.Tensor</li>
+<li>Tensor Attributes</li>
+<li>Tensor Views</li>
+<li>torch.autograd</li>
+<li>torch.cuda</li>
+<li>torch.cuda.amp</li>
+<li>torch.distributed</li>
+<li>torch.distributions</li>
+<li>torch.hub</li>
+<li>torch.jit</li>
+<li>torch.nn.init</li>
+<li>torch.onnx</li>
+<li>torch.optim</li>
+<li>Quantization</li>
+<li>Distributed RPC Framework</li>
+<li>torch.random</li>
+<li>torch.sparse</li>
+<li>torch.Storage</li>
+<li>torch.utils.bottleneck</li>
+<li>torch.utils.checkpoint</li>
+<li>torch.utils.cpp_extension</li>
+<li>torch.utils.data</li>
+<li>torch.utils.dlpack</li>
+<li>torch.utils.model_zoo</li>
+<li>torch.utils.tensorboard</li>
+<li>Type Info</li>
+<li>Named Tensors</li>
+<li>Named Tensors operator coverage</li>
+</ul>
+<p>以及：</p>
+<ul>
+<li>torchaudio</li>
+<li>torchtext</li>
+<li>torchvision</li>
+<li>TorchElastic</li>
+<li>TorchServe</li>
+</ul>
+<p>上面是列出的所有1.5版本所有PyTorch的API。日后如果PyTorch继续发达了，请参考官方文档！一般同学看到这么复杂的文档，心情肯定是很糟糕的。但是，正如我最开始举的例子，它们都是继承者们，没错是torch的继承者们。所以，读到这里，你应该明白一件事情：</p>
+<div class="note success"><p>想要快速上手大型开源项目，首先抓住这个项目的核心。</p></div>
+
+<p>这里的核心很明显就是torch，当你理解了torch。再开始找最需要理解的下一个继承者，很明显torch.nn需要搞明白。至于其他继承者们，需要的时候再花时间研究。作者上手PyTorch用了两天的时间，但是却花了大量的时间在他的继承者上面。</p>
+<h2 id="分类讨论和按需理解"><a href="#分类讨论和按需理解" class="headerlink" title="分类讨论和按需理解"></a>分类讨论和按需理解</h2><p>如果你也需要和有时间去了解这些继承者们。除了搞明白官方文档，还需要看书，上课，写代码。这里，我教同学一招如何快速搞明白官方文档。快速搞明白官方文档分两步，具体操作如下。</p>
+<h3 id="分类讨论"><a href="#分类讨论" class="headerlink" title="分类讨论"></a>分类讨论</h3><p>上面列出的一堆继承者们。大致可以分为下面这个几类（根据个人理解分类，没有绝对的正确）。分类的目的，是帮助同学快速逆向推理出项目的大致架构，从而可以快速理解项目的开发过程，进而可以更准确的根据需要理解对应的文档。</p>
+<details yellow><summary> <p>基本函数</p> </summary>
+              <div class='content'>
+              <ul><li>torch.nn</li><li>torch.nn.functional</li><li>torch.nn.init</li><li>torch.autograd</li><li>torch.optim</li></ul>
+              </div>
+            </details>
+
+<details red><summary> <p>进阶函数</p> </summary>
+              <div class='content'>
+              <ul><li>torch.random</li><li>torch.sparse</li><li>torch.Storage</li><li>Quantization</li></ul>
+              </div>
+            </details>
+
+<details blue><summary> <p>基本数据结构</p> </summary>
+              <div class='content'>
+              <ul><li>Tensor Attributes</li><li>Tensor Views</li></ul>
+              </div>
+            </details>
+
+<details green><summary> <p>进阶数据结构</p> </summary>
+              <div class='content'>
+              <ul><li>Type Info</li><li>Named Tensors</li><li>Named Tensors operator coverage</li></ul>
+              </div>
+            </details>
+
+<details cyan><summary> <p>基本数据存储</p> </summary>
+              <div class='content'>
+              <ul><li>torch.cuda</li><li>torch.cuda.amp</li></ul>
+              </div>
+            </details>
+
+<details yellow><summary> <p>并行和分布式计算</p> </summary>
+              <div class='content'>
+              <ul><li>torch.distributed</li><li>torch.distributions</li><li>Distributed RPC Framework</li></ul>
+              </div>
+            </details>
+
+<details red><summary> <p>模型动物园</p> </summary>
+              <div class='content'>
+              <ul><li>torch.hub</li></ul>
+              </div>
+            </details>
+
+<details blue><summary> <p>转换和调用</p> </summary>
+              <div class='content'>
+              <ul><li>torch.jit</li><li>torch.onnx</li></ul>
+              </div>
+            </details>
+
+<details green><summary> <p>工具箱</p> </summary>
+              <div class='content'>
+              <ul><li>torch.utils.bottleneck</li><li>torch.utils.checkpoint</li><li>torch.utils.cpp_extension</li><li>torch.utils.data</li><li>torch.utils.dlpack</li><li>torch.utils.model_zoo</li><li>torch.utils.tensorboard</li></ul>
+              </div>
+            </details>
+
+<details cyan><summary> <p>数据处理接口</p> </summary>
+              <div class='content'>
+              <ul><li>torchaudio</li><li>torchtext</li><li>torchvision</li></ul>
+              </div>
+            </details>
+
+<details yellow><summary> <p>集群训练和服务</p> </summary>
+              <div class='content'>
+              <ul><li>TorchElastic</li><li>TorchServe</li></ul>
+              </div>
+            </details>
+
+<h3 id="按需理解"><a href="#按需理解" class="headerlink" title="按需理解"></a>按需理解</h3><h3 id="例子-线性回归"><a href="#例子-线性回归" class="headerlink" title="例子-线性回归"></a>例子-线性回归</h3><p>经过上一轮分析，基本函数肯定要要搞明白的。这里面有：</p>
+<ul>
+<li>torch.nn</li>
+<li>torch.nn.functional</li>
+<li>torch.nn.init</li>
+<li>torch.autograd</li>
+<li>torch.optim</li>
+</ul>
+<p>这部分我就用一个最简单的例子 - 线性回归，来帮助同学逐步理解这些基本函数。</p>
+<div class="note "><p>机器学习有五大问题：分类、回归、聚类、降维。其应用最广的可能就属回归分析了，再回归分析中，线性回归可谓是任何一门机器学习课程或者书籍必须要讲的，也是最先要讲的回归分析算法。</p></div>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create data</span></span><br><span class="line">x = torch.unsqueeze(torch.linspace(<span class="number">-1</span>, <span class="number">1</span>, <span class="number">100</span>), dim=<span class="number">1</span>)  </span><br><span class="line">noise = <span class="number">5</span> * torch.rand(x.size())  </span><br><span class="line">bias = <span class="number">5</span> * torch.ones(x.size())</span><br><span class="line">y = bias + <span class="number">5</span> * x + noise</span><br><span class="line"></span><br><span class="line"><span class="comment"># View data   </span></span><br><span class="line">plt.title(<span class="string">'Linear Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">plt.xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.scatter(x.data.numpy(), y.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create model</span></span><br><span class="line">linear_regression = nn.Linear(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">optimizer = optim.SGD(linear_regression.parameters(), lr=<span class="number">0.2</span>)</span><br><span class="line">criterion = nn.MSELoss() </span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    y_pred = linear_regression(x)</span><br><span class="line">    loss = criterion(y_pred, y)</span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># plot and show learning process</span></span><br><span class="line">    plt.cla()</span><br><span class="line">    ax.set_title(<span class="string">'Linear Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">-1.5</span>, <span class="number">1.5</span>)</span><br><span class="line">    ax.set_ylim(<span class="number">-1.0</span>, <span class="number">16.0</span>)</span><br><span class="line">    ax.scatter(x.data.numpy(), y.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">    ax.plot(x.data.numpy(), y_pred.data.numpy(), <span class="string">'g-'</span>, lw=<span class="number">3</span>)</span><br><span class="line">    ax.text(<span class="number">0.8</span>, <span class="number">1.0</span>, </span><br><span class="line">            <span class="string">'Epoch = &#123;&#125;, Loss = &#123;:.2f&#125;'</span>.format(epoch, loss.data.numpy()), </span><br><span class="line">            fontdict=&#123;<span class="string">'size'</span>: <span class="number">10</span>, <span class="string">'color'</span>: <span class="string">'black'</span>&#125;)</span><br><span class="line">    fig.canvas.draw()     </span><br><span class="line">    img = np.frombuffer(fig.canvas.tostring_rgb(), dtype=<span class="string">'uint8'</span>)</span><br><span class="line">    img = img.reshape(fig.canvas.get_width_height()[::<span class="number">-1</span>] + (<span class="number">3</span>,))</span><br><span class="line">    img = Image.fromarray(img)</span><br><span class="line">    images_list.append(img)</span><br><span class="line">            </span><br><span class="line"><span class="comment"># save images as a gif    </span></span><br><span class="line">images_list[<span class="number">0</span>].save(<span class="string">'./linear_regression.gif'</span>,</span><br><span class="line">                    save_all=<span class="literal">True</span>, </span><br><span class="line">                    append_images=images_list[<span class="number">1</span>:], </span><br><span class="line">                    optimize=<span class="literal">False</span>, </span><br><span class="line">                    duration=<span class="number">100</span>, </span><br><span class="line">                    loop=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面是一个完整展示，用PyTorch中的基本函数来解决一个线性回归分析。其中我用到torch.nn中的Linear来用线性回归算法对一个回归问题行进建模</p>
+<p>为了让同学更直观的看到训练过程，我这个的输入变量（特征值）的维度是1维。所以要拟合的的函数就是：</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \theta_0 + \theta_1 x<br>\end{equation}<br>$$</p>
+<p>看到这个公式，很多同学会想到:</p>
+<p>$$<br>\begin{equation}<br>y = b + k x<br>\end{equation}<br>$$</p>
+<p>没错，这就是我们小学课堂上面讲的一元一次函数。是不是瞬间感觉高大上的线性回归也不过如此。但是，实际生活中的数据并不是完美落在这条线上面的，而会像动图中的点一样，分布在这条线的两边。所以，给定一些点（训练数据）去找这条线的方法（模型训练）就是，找到一条线离各个点的距离最小。这里，衡量一条线到所有点的距离就叫损失，而去找离各个点距离最小的线就是去找损失函数最小的解，也就是估计上面公式中参数（b, k）。其最终的数学表达式如下：</p>
+<p>$$<br>\begin{equation}<br>J(\theta) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x_i)) - (y_i))^2<br>\end{equation}<br>$$</p>
+<p>通过训练得到损失函数最小的解。就可以得到原式（假设）的参数，最后可以将下面式子中所有的参数都换成了具体的数字：</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \theta_0 x_0 + \theta_1 x_1 + … + \theta_n x_n \space \space where \space x_0 = 1<br>\end{equation}<br>$$</p>
+<h3 id="例子-逻辑回归"><a href="#例子-逻辑回归" class="headerlink" title="例子-逻辑回归"></a>例子-逻辑回归</h3><h3 id="例子-神经网络"><a href="#例子-神经网络" class="headerlink" title="例子-神经网络"></a>例子-神经网络</h3><p>人工神经网络是一种计算模型，启发自人类大脑处理信息的生物神经网络。其本质上是多层感知器，也就是多层的多路输出线性回归，每一层线性回归的每一个输出都有一个激活函数，通过这个激活函数，最终形成一个神经元。其中第一层叫做输入节点，中间所有层叫做隐藏节点，最后一层叫做输出节点。下面我们就用PyTorch是实现一个神经网络。</p>
+<h3 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h3><p>深度神经网络可以看作是神经网络的进一步延申。根据内部结构和所处理的问题（例如，自然语言和计算机视觉），可以分成各式各样的深度神经网络。所以根据上面的三个例子，希望同学们能对PyTorch有一个大致的了解。同时从上面的三个例子中，可以看出PyTorch作为优秀的深度学习的框架，在搭建各种各样的深度神经网络可谓是非常简单。这里，也希望同学可以根据所处理和研究的问题，搭建起属于自己的深度神经网络。</p>
+<h2 id="站在巨人肩上眺望"><a href="#站在巨人肩上眺望" class="headerlink" title="站在巨人肩上眺望"></a>站在巨人肩上眺望</h2><p>分析完基本函数，我们再来看基本数据结构。之前我说过，PyTorch之所以如此成功，是因为它站在了NumPy的肩膀是。为什么这个说呢？下面看两个例子。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+
+<p>PyTorch中储存数据的壳子叫tensor，而NumPy叫做ndarray。在上面的例子中，PyTorch的tensor不仅可以和NumPy中的ndarray相互切换，而且里面的数据类型都是一样的。</p>
+<p>TABLE</p>
+<p>更重要的是，NumPy中有的对ndarray的各种操作，PyTorch中的tensor也都一摸一样。这时很多同学就会反问了：“这不是基本操作吗？”对，正式因为基本操作，PyTorch就直接拿来一用，这不香吗？虽然，NumPy底层是用C实现的，而PyTorch大多功能是用C++实现的。但是，用什么方式和语言实现都是次要，关键是PyTorch模仿了很多NumPy东西。比如功能设计的非常人性，运算速度快，误差极小，从数据结构到各种算法的优化方式。最最最重要的是ndarray支持并行化运算（向量化运算），而且底层使用C语言编写，内部解除了GIL（全局解释器锁），其对数组的操作速度不受Python解释器的限制。这些NumPy的优点使得PyTorch去实现很多设计理念变的非常容易。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>大量练习写PyTorch代码！很多东西靠看是学不会的，自动动手写一写。哪怕重写一些教程都比死记硬背的要好的多。</p>
+<p>在创业公司工作，每年都会遇到一到两个大型开源项目，时不时还有很多小的开源项目。在FLAG工作也一样，虽然基本都在做公司的东西，但是也需要经常去学习和参考别人是怎么做的，有什么新的设计理念，有什么新的技术，有什么新功能需要实现。所以，希望同学可以掌握或者总结一套自己的学习方法，去面对未来高速发展的社会。</p>
+<p>再次感谢这些做开源项目的人！致敬！</p>
+<h2 id="参考和学习资料"><a href="#参考和学习资料" class="headerlink" title="参考和学习资料"></a>参考和学习资料</h2><br/> 
+
+<div class="btns circle grid5">
+            <a href='mailto:weikun.han@g.ucla.com' title='Contact Me'><i class='fas fa-envelope-square'></i>Contact Me</a>
+<a href='https://github.com/weikunhan/' target="_blank" rel="noopener" title='GitHub'><i class='fab fa-github-square'></i>GitHub</a>
+<a href='https://www.linkedin.com/in/weikunhan/' target="_blank" rel="noopener" title='LinkedIn'><i class='fab fa-linkedin'></i>LinkedIn</a>
+<a href='https://scholar.google.com/citations?user=MOfRj_YAAAAJ&hl=en/' target="_blank" rel="noopener" title='Google Scholar'><i class='fas fa-university'></i>Google Scholar</a>
+<a href='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents/resumes/curriculum_vitae_1.pdf' target="_blank" rel="noopener" title='Curriculum Vitae'><i class='fas fa-file-download'></i>Curriculum Vitae</a>
+          </div>
+
+<img src='https://media0.giphy.com/media/Tia2InBEWaQgckP3UG/giphy.gif' alt='每天下课回宿舍的路，承载了太多记忆。'>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-11T11:57:38-07:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jul 11, 2020</p>
+  </a>
+</div>
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> Comments</p>
+      
+        <p cst>aaaaaaaaaaaaaaaa</p>
+      
+      
+        <section id="comments">
+          <div id="disqus_thread">
+            <div><i class='fas fa-exclamation-triangle'></i>&nbsp;Unable to load Disqus, please make sure your network can access.</div>
+          </div>
+        </section>
+      
+      
+      
+      
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>Contents</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开门不见山"><span class="toc-text">开门不见山</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拨开迷雾见月明"><span class="toc-text">拨开迷雾见月明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类讨论和按需理解"><span class="toc-text">分类讨论和按需理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类讨论"><span class="toc-text">分类讨论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按需理解"><span class="toc-text">按需理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-线性回归"><span class="toc-text">例子-线性回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-逻辑回归"><span class="toc-text">例子-逻辑回归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-神经网络"><span class="toc-text">例子-神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深度神经网络"><span class="toc-text">深度神经网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#站在巨人肩上眺望"><span class="toc-text">站在巨人肩上眺望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考和学习资料"><span class="toc-text">参考和学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.3'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='340px'
+      server='tencent'
+      type='search'
+      id='Mozart Lang Lang'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:weikunhan@gmail.com"
+                class="social fas fa-envelope-square flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/weikunhan/"
+                class="social fab fa-github-square flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://www.linkedin.com/in/weikunhan/"
+                class="social fab fa-linkedin flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://scholar.google.com/citations?user=MOfRj_YAAAAJ&amp;hl=en/"
+                class="social fas fa-university flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/resumes/curriculum_vitae_1.pdf"
+                class="social fas fa-file-download flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://weikunhan.github.io">Copyright © 2020 Weikun Han</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A2.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_B1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_C1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D2.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "30000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "30000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+  <script>
+    var disqus_shortname = 'weikunhan';
+    
+      var disqus_url = 'https://weikunhan.github.io/blogs/technologies_study/pytorch/index.html';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
