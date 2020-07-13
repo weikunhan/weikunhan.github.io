@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>Standing on the Shoulders of Pytorch to Learn Deep Learning - Weikun Han&#39;s Website</title>
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover page' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Weikun Han</p>
+    
+    
+      <p class="subtitle">「Research Assistant Intern at Oregon State University」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>Home
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/publications"
+                
+                
+                id="publications">
+                <i class='fas fa-file-alt fa-fw'></i>Publications
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/projects"
+                
+                
+                id="projects">
+                <i class='fas fa-robot fa-fw'></i>Projects
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/courses"
+                
+                
+                id="courses">
+                <i class='fas fa-graduation-cap fa-fw'></i>Courses
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/awards"
+                
+                
+                id="awards">
+                <i class='fas fa-trophy fa-fw'></i>Awards
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/blogs"
+                
+                
+                id="blogs">
+                <i class='fas fa-book fa-fw'></i>Blogs
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur floatable">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/new_weikun_han_web_1.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>Home
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/publications
+                  
+                  
+                  
+                    id="publications"
+                  >
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/journal_publications
+                  
+                  
+                  
+                    id="publicationsjournal_publications"
+                  >
+                  Journal Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/conference_publications
+                  
+                  
+                  
+                    id="publicationsconference_publications"
+                  >
+                  Conference Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/projects
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-robot fa-fw'></i>Projects
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                Coming Soon
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/courses
+                  
+                  
+                  
+                    id="courses"
+                  >
+                  <i class='fas fa-graduation-cap fa-fw'></i>Courses
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/awards
+                  
+                  
+                  
+                    id="awards"
+                  >
+                  <i class='fas fa-trophy fa-fw'></i>Awards
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/blogs
+                  
+                  
+                  
+                    id="blogs"
+                  >
+                  <i class='fas fa-book fa-fw'></i>Blogs
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>Home
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/publications
+                  
+                  
+                  
+                    id="publications"
+                  >
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/journal_publications
+                  
+                  
+                  
+                    id="publicationsjournal_publications"
+                  >
+                  Journal Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/publications/conference_publications
+                  
+                  
+                  
+                    id="publicationsconference_publications"
+                  >
+                  Conference Publications
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/projects
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-robot fa-fw'></i>Projects
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                Coming Soon
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/courses
+                  
+                  
+                  
+                    id="courses"
+                  >
+                  <i class='fas fa-graduation-cap fa-fw'></i>Courses
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/awards
+                  
+                  
+                  
+                    id="awards"
+                  >
+                  <i class='fas fa-trophy fa-fw'></i>Awards
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/blogs
+                  
+                  
+                  
+                    id="blogs"
+                  >
+                  <i class='fas fa-book fa-fw'></i>Blogs
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+  <div class="l_body">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
+  <div id="pjax-enable-cover">true</div>
+  
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("blog" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("blog" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("blog" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="page" class="post white-box reveal shadow article-type-page" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/blogs/technologies_study/pytorch_introduction/index.html">
+      Standing on the Shoulders of Pytorch to Learn Deep Learning
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://weikunhan.github.io/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/weikun_han_1.png">
+    <p>Weikun Han</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>Created on: Jul 12, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <img src='/images/pytorch_introduction_1.png' alt='当你学会站在巨人的肩膀上，你突然发现可以看到更远的山川 - 韩劲谦' style='width:600px'>
+
+<a id="more"></a> 
+
+<h2 id="1-Introduction-开门不见山"><a href="#1-Introduction-开门不见山" class="headerlink" title="1 Introduction 开门不见山"></a>1 Introduction 开门不见山</h2><p>With the development of deep learning, many deep learning frameworks are emerging. Now, the most popular deep learning framework should be PyTorch. The data show that in the 2020 CVPR, PyTorch related papers have four times as much as TensorFlow. After retiring from the company, I finally had an opportunity to try PyTorch. After starting using PyTorch, I just want to say: “I feel so good!”</p>
+<p>随着深度学习发展，深度学习的框架也层出不穷。现在最流行的深度学习框架应该非PyTorch莫属了。有数据显示，在2020的CVPR论文中PyTorch占比是TensorFlow 4 倍。从公司退来之后，终于有机会接触PyTorch。上手PyTorch之后，只能用两个子形容：真香。</p>
+<p>From the upsetting Caffe to the fast and stable TensorFlow, I have treated PyTorch with rose-colored glasses in the past two years of work. To be honest, the previous PyTorch would be more suitable for research, and it didn’t very support the end-to-end model pipeline in the industry (data processing, model training, model testing, and model serving). The current PyTorch is a real leader in the deep learning framework market. First of all,  to understand and customize classes in Pytorch is very easy due to it provides various capsulated classes, you only need inheritance the class that you want. Secondly, all APIs in Pytorch are user-friendly, full-featured, and convenient to use. Moreover, the official documentation is very detailed. There also have many official tutorials. Finally, the PyTorch community helps answer various questions.</p>
+<p>在过去工作的两年里，从令人跺脚的Caffe到后来快速稳定的TensorFlow，我一直对PyTorch带着有色眼镜。讲道理，之前的PyTorch还是更适合做研究，对于工业界的一整套东西（数据整合，模型训练，模型验证，模型服务）支持的并不是很理想。现在的PyTorch，可谓是深度学习框架的翘楚。首先，各种类的封装做的没话说，理解和自定义类非常简单。其次，API设计的非常人性，功能很全，使用起来非常方便。最后，官方文档写的很详细，官方教程很多，并且还有PyTorch社区帮忙回答各种问题。</p>
+<div class="note quote">
+            <p>PyTorch的接口是Python，但底层主要都是用C++实现的。PyTorch使用一种称之为 imperative/eager 的范式，即每一行代码都要求构建一个图以定义完整计算图的一个部分。即使完整的计算图还没有完成构建，我们也可以独立地执行这些作为组件的小计算图，这种动态计算图被称为define-by-run方法。- 机器之心 SyncedTech</p>
+          </div>
+
+<p>上面这段摘自机器之心对PyTorch基本描述看起来很高大上，其实对同学入门PyTorch并没有太大帮助。但是因为上面这个设计理念，让PyTorch变的清新脱俗。因为大部分入门PyTorch的同学主要关心如何快速上手，所以，这里我就不再对这些高大上的设计理念展开更多的介绍。</p>
+<p>牛顿说过：“如果我看得更远一点的话，是因为我站在巨人的肩膀上”。 PyTorch之所以能变的如此流行，也是因为站在了巨人的肩上。PyTorch不是闭门造车，更不是从头一点一点开始。很多人说：“PyTorch的工作流程非常接近于Python的科学计算库NumPy”。如此说来，PyTorch站在了NumPy的肩膀上。后面的内容，我会说明为什么PyTorch站在了NumPy的肩膀上。</p>
+<p>由于PyTorch各类教程很多，我在最后列出了一些PyTorch学习资源，希望同学们对这些学习资源各取所需。这篇博客，我以介绍如何快速上手PyTorch为例子，同时介绍一种快速上手大型项目的方法。希望这样的学习方法可以帮助到一些学生。</p>
+<h2 id="2-拨开迷雾见月明"><a href="#2-拨开迷雾见月明" class="headerlink" title="2 拨开迷雾见月明"></a>2 拨开迷雾见月明</h2><p>现在，如果你对PyTorch非常感兴趣，让我带你来走进PyTorch世界。那么，如何快速上手PyTorch，应对实战项目呢？</p>
+<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
+            <p>看官方文档</p>
+            </div>
+<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
+            <p>看开源PyTorch项目</p>
+            </div>
+<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
+            <p>看推荐PyTorch书籍</p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p>上精品PyTorch网课</p>
+            </div>
+<div class='checkbox red checked'><input type="checkbox" checked="checked"/>
+            <p>大量练习写PyTorch代码！</p>
+            </div>
+
+<p>上面5点，最重要的是大量练习写PyTorch代码！但是，一般来讲接触到一个陌生的东西，第一步是源自开源项目，然后开始看官方文档。那么现在就看一个例子 - 如何正确的自学成才。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br></pre></td></tr></table></figure>
+
+<p>很多开源PyTorch项目会看到上面的API。这也是PyTorch最重要的两个APIs。第一个API是torch， 基本是NumPy换了一个马甲，但是同时增加很多一个深度学习的框架应该有的基本功能。可以说，正式因为torch，才组建了如此高大上的深度学习的框架。我们可以用下面的例子来说明，让我们试试如何用torch实现torch.nn的功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line">x = torch.tensor([<span class="number">-4.5</span>, <span class="number">0.7</span>, <span class="number">3.3</span>])</span><br><span class="line">y = torch.tensor([<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">1.</span>])</span><br><span class="line">h = nn.Sigmoid()</span><br><span class="line">criterion = nn.BCELoss()</span><br><span class="line">torch_nn_loss = criterion(h(x), y)</span><br><span class="line">print(<span class="string">'Logistic Regression Cross Entropy Loss use torch.nn: loss = &#123;&#125;'</span>.format(torch_nn_loss.item()))</span><br><span class="line"></span><br><span class="line">torch_loss = -(y * torch.log(torch.sigmoid(x)) + (<span class="number">1</span> - y) * torch.log(<span class="number">1</span> - torch.sigmoid(x))).mean()</span><br><span class="line">print(<span class="string">'Logistic Regression Cross Entropy Loss use torch: loss = &#123;&#125;'</span>.format(torch_loss.item()))</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码展示了一个分类问题损失函数 - 逻辑回归。其数学表达式如下：</p>
+<p>$$<br>\begin{equation}<br>J(\theta) = - \frac{1}{m} \sum_{i=1}^m \lbrack y_i \log(h_\theta(x_i)) + (1 - y_i) \log(1 - h_\theta(x_i)) \rbrack<br>\end{equation}<br>$$</p>
+<p>最后结果两边的计算结果都是1.884。从这里开始很明显的看出：用torch基本的算子可以实现torch.nn的功能。看到这里，是不是感到很惊讶，感觉自己可以去做一个深度学习的框架了？别急，如果直接用torch的基本的算子实现的各种函数功能，可能需要写上万行多余的代码。而且这样的代码，对后期的维护、功能扩展、代码的性能优化、和其他硬软件的兼容都是灾难的铺垫！所以，PyTorch的开发人员利用编程中很重要的基本思想 - 面向对象编程。这个可能你都不清楚的基本思想，加上套了马甲的NumPy。不仅实现了torch.nn，还实现了：</p>
+<details ><summary> <p>View All 查看全部</p> </summary>
+              <div class='content'>
+              <ul><li>torch.nn.functional</li><li>torch.Tensor</li><li>Tensor Attributes</li><li>Tensor Views</li><li>torch.autograd</li><li>torch.cuda</li><li>torch.cuda.amp</li><li>torch.distributed</li><li>torch.distributions</li><li>torch.hub</li><li>torch.jit</li><li>torch.nn.init</li><li>torch.onnx</li><li>torch.optim</li><li>Quantization</li><li>Distributed RPC Framework</li><li>torch.random</li><li>torch.sparse</li><li>torch.Storage</li><li>torch.utils.bottleneck</li><li>torch.utils.checkpoint</li><li>torch.utils.cpp_extension</li><li>torch.utils.data</li><li>torch.utils.dlpack</li><li>torch.utils.model_zoo</li><li>torch.utils.tensorboard</li><li>Type Info</li><li>Named Tensors</li><li>Named Tensors operator coverage</li></ul><p>And：</p><ul><li>torchaudio</li><li>torchtext</li><li>torchvision</li><li>TorchElastic</li><li>TorchServe</li></ul>
+              </div>
+            </details>
+
+<p>上面是列出的所有1.5版本所有PyTorch的API。日后如果PyTorch继续发达了，请参考官方文档！一般同学看到这么复杂的文档，心情肯定是很糟糕的。但是，正如我最开始举的例子，它们都是继承者们，没错是torch的继承者们。所以，读到这里，你应该明白一件事情：</p>
+<div class="note success"><p>想要快速上手大型开源项目，首先抓住这个项目的核心。</p></div>
+
+<p>这里的核心很明显就是torch，当你理解了torch。再开始找最需要理解的下一个继承者，很明显torch.nn需要搞明白。至于其他继承者们，应该怎么学呢？请看下面的分析。</p>
+<h2 id="3-分类讨论和按需理解"><a href="#3-分类讨论和按需理解" class="headerlink" title="3 分类讨论和按需理解"></a>3 分类讨论和按需理解</h2><p>如果你也需要和有时间去了解这些继承者们。除了搞明白官方文档，还需要看书，上课，写代码。这里，我教同学一招如何快速搞明白官方文档。快速搞明白官方文档分两步，具体操作如下。</p>
+<h3 id="3-1-分类讨论"><a href="#3-1-分类讨论" class="headerlink" title="3.1 分类讨论"></a>3.1 分类讨论</h3><p>上面列出的一堆继承者们。大致可以分为下面这个几类（根据个人理解分类，没有绝对的正确）。分类的目的，是帮助同学快速逆向推理出项目的大致架构，从而可以快速理解项目的开发过程，进而可以更准确的根据需要理解对应的文档。</p>
+<details yellow><summary> <p>基本函数</p> </summary>
+              <div class='content'>
+              <ul><li>torch.nn</li><li>torch.nn.functional</li><li>torch.nn.init</li><li>torch.autograd</li><li>torch.optim</li></ul>
+              </div>
+            </details>
+
+<details red><summary> <p>进阶函数</p> </summary>
+              <div class='content'>
+              <ul><li>torch.random</li><li>torch.sparse</li><li>torch.Storage</li><li>Quantization</li></ul>
+              </div>
+            </details>
+
+<details blue><summary> <p>基本数据结构</p> </summary>
+              <div class='content'>
+              <ul><li>Tensor Attributes</li><li>Tensor Views</li></ul>
+              </div>
+            </details>
+
+<details green><summary> <p>进阶数据结构</p> </summary>
+              <div class='content'>
+              <ul><li>Type Info</li><li>Named Tensors</li><li>Named Tensors operator coverage</li></ul>
+              </div>
+            </details>
+
+<details cyan><summary> <p>基本数据存储</p> </summary>
+              <div class='content'>
+              <ul><li>torch.cuda</li><li>torch.cuda.amp</li></ul>
+              </div>
+            </details>
+
+<details yellow><summary> <p>并行和分布式计算</p> </summary>
+              <div class='content'>
+              <ul><li>torch.distributed</li><li>torch.distributions</li><li>Distributed RPC Framework</li></ul>
+              </div>
+            </details>
+
+<details red><summary> <p>模型库</p> </summary>
+              <div class='content'>
+              <ul><li>torch.hub</li></ul>
+              </div>
+            </details>
+
+<details blue><summary> <p>模型转换和调用</p> </summary>
+              <div class='content'>
+              <ul><li>torch.jit</li><li>torch.onnx</li></ul>
+              </div>
+            </details>
+
+<details green><summary> <p>常用工具箱</p> </summary>
+              <div class='content'>
+              <ul><li>torch.utils.bottleneck</li><li>torch.utils.checkpoint</li><li>torch.utils.cpp_extension</li><li>torch.utils.data</li><li>torch.utils.dlpack</li><li>torch.utils.model_zoo</li><li>torch.utils.tensorboard</li></ul>
+              </div>
+            </details>
+
+<details cyan><summary> <p>各种深度学习任务数据接口</p> </summary>
+              <div class='content'>
+              <ul><li>torchaudio</li><li>torchtext</li><li>torchvision</li></ul>
+              </div>
+            </details>
+
+<details yellow><summary> <p>集群训练和服务</p> </summary>
+              <div class='content'>
+              <ul><li>TorchElastic</li><li>TorchServe</li></ul>
+              </div>
+            </details>
+
+<h3 id="3-2-按需理解"><a href="#3-2-按需理解" class="headerlink" title="3.2 按需理解"></a>3.2 按需理解</h3><h4 id="3-2-1-例子-线性回归"><a href="#3-2-1-例子-线性回归" class="headerlink" title="3.2.1 例子-线性回归"></a>3.2.1 例子-线性回归</h4><p>经过上一轮分析，基本函数肯定要要搞明白的。这里面有：</p>
+<ul>
+<li>torch.nn</li>
+<li>torch.nn.functional</li>
+<li>torch.nn.init</li>
+<li>torch.autograd</li>
+<li>torch.optim</li>
+</ul>
+<p>这部分我就用一个最简单的例子 - 线性回归，来帮助同学逐步理解这些PyTorch的基本函数。</p>
+<div class="note "><p>机器学习有五大问题：分类、回归、聚类、降维、和强化。应用最广的可能就属回归分析了，其目的是帮助人们了解在只有一个自变量变化时因变量的变化量。在回归分析中，线性回归可谓是任何一门机器学习课程或者书籍的第一课，也是最简单和最先需要讲的算法。</p></div>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create data</span></span><br><span class="line">x = torch.unsqueeze(torch.linspace(<span class="number">-1</span>, <span class="number">1</span>, <span class="number">100</span>), dim=<span class="number">1</span>)  </span><br><span class="line">noise = <span class="number">5</span> * torch.rand(x.size())  </span><br><span class="line">bias = <span class="number">5</span> * torch.ones(x.size())</span><br><span class="line">y = bias + <span class="number">5</span> * x + noise</span><br><span class="line"></span><br><span class="line"><span class="comment"># View data   </span></span><br><span class="line">plt.title(<span class="string">'Linear Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">plt.xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.scatter(x.data.numpy(), y.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create model</span></span><br><span class="line">linear_regression = nn.Linear(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">optimizer = optim.SGD(linear_regression.parameters(), lr=<span class="number">0.2</span>)</span><br><span class="line">criterion = nn.MSELoss() </span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    y_pred = linear_regression(x)</span><br><span class="line">    loss = criterion(y_pred, y)</span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># plot and show learning process</span></span><br><span class="line">    plt.cla()</span><br><span class="line">    ax.set_title(<span class="string">'Linear Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">-1.5</span>, <span class="number">1.5</span>)</span><br><span class="line">    ax.set_ylim(<span class="number">-1.0</span>, <span class="number">16.0</span>)</span><br><span class="line">    ax.scatter(x.data.numpy(), y.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">    ax.plot(x.data.numpy(), y_pred.data.numpy(), <span class="string">'g-'</span>, lw=<span class="number">3</span>)</span><br><span class="line">    ax.text(<span class="number">0.8</span>, <span class="number">1.0</span>, </span><br><span class="line">            <span class="string">'Epoch = &#123;&#125;, Loss = &#123;:.2f&#125;'</span>.format(epoch, loss.data.numpy()), </span><br><span class="line">            fontdict=&#123;<span class="string">'size'</span>: <span class="number">10</span>, <span class="string">'color'</span>: <span class="string">'black'</span>&#125;)</span><br><span class="line">    fig.canvas.draw()     </span><br><span class="line">    img = np.frombuffer(fig.canvas.tostring_rgb(), dtype=<span class="string">'uint8'</span>)</span><br><span class="line">    img = img.reshape(fig.canvas.get_width_height()[::<span class="number">-1</span>] + (<span class="number">3</span>,))</span><br><span class="line">    img = Image.fromarray(img)</span><br><span class="line">    images_list.append(img)</span><br><span class="line">            </span><br><span class="line"><span class="comment"># save images as a gif    </span></span><br><span class="line">images_list[<span class="number">0</span>].save(<span class="string">'./linear_regression.gif'</span>,</span><br><span class="line">                    save_all=<span class="literal">True</span>, </span><br><span class="line">                    append_images=images_list[<span class="number">1</span>:], </span><br><span class="line">                    optimize=<span class="literal">False</span>, </span><br><span class="line">                    duration=<span class="number">100</span>, </span><br><span class="line">                    loop=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面是一个完整展示，用PyTorch中的基本函数来解决一个线性回归分析。其中我用到torch.nn中的Linear来构建一个线性回归的算法模型（行22）。然后用torch.optim中的SGD建立一个优化方法（行25）。最后用，torch.nn中的MSELoss来定义损失函数（26行）。利用Pytoch训练定义好的模型和参数非常简单，只需要六行就可以搞定（上面行30到行35的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
+<p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成1维。并且，我把整个训练过程可视化出来。</p>
+<img src='/images/pytorch_introduction_2.gif' style='width:600px'>
+
+<p>线性回归分析简单来讲就是在一个线性分布的数据中，找到一个线（如图中的绿色的线），来拟合整个数据分布。代码中（9行到12行），我创建了一个线性分布的数据根据下面的式子（其中我加了一些高斯噪音，为了模拟真实生活中的数据）。</p>
+<p>$$<br>\begin{equation}<br>y = 5 + 5 x<br>\end{equation}<br>$$</p>
+<p>所以要拟合的的函数就是：</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \theta_0 + \theta_1 x<br>\end{equation}<br>$$</p>
+<p>看到这个公式，很多同学会想到:</p>
+<p>$$<br>\begin{equation}<br>y = b + k x<br>\end{equation}<br>$$</p>
+<p>没错，这就是我们小学课堂上面讲的一元一次函数。是不是瞬间感觉高大上的线性回归也不过如此。但是，实际生活中的数据并不是完美落在这条线上面的，而会像动图中的点一样，分布在这条线的两边。所以，给定一些点（训练数据）去找这条线的方法（模型训练）就是，找到一条线离各个点的距离最小。这里，衡量一条线到所有点的距离就叫损失，而去找离各个点距离最小的线就是去找损失函数最小的解，也就是估计上面公式中参数（b, k）。其最终的高维的数学表达式如下：</p>
+<p>$$<br>\begin{equation}<br>J(\theta) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x_i)) - (y_i))^2<br>\end{equation}<br>$$</p>
+<p>通过训练得到损失函数最小的解，就有可能得到原始函数（假设）的参数。最后可以将下面式子中所有的参数都换成了具体的数字：</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \theta_0 x_0 + \theta_1 x_1 + … + \theta_n x_n \space \space where \space x_0 = 1<br>\end{equation}<br>$$</p>
+<p>上面提供的代码例子其实有很多缺点。第一，不易维护。第二，不易拓展。第三，不易开发。所以，我们这里需要把，数据的载入封装起来，通过继承torch.utils.data中的Dataset来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SimpleData</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = torch.unsqueeze(torch.linspace(<span class="number">-1</span>, <span class="number">1</span>, <span class="number">100</span>), dim=<span class="number">1</span>)  </span><br><span class="line">        noise = <span class="number">5</span> * torch.rand(self.x.size())  </span><br><span class="line">        bias = <span class="number">5</span> * torch.ones(self.x.size())</span><br><span class="line">        self.y = bias + <span class="number">5</span> * self.x + noise </span><br><span class="line">        self.len = self.y.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.len</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.x[index] , self.y[index]</span><br></pre></td></tr></table></figure>
+
+<p>然后再把模型的建立也封装起来，通过继承torch.nn中的Module来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinearRegression</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(LinearRegression, self).__init__()</span><br><span class="line">        self.linear = nn.Linear(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        out = self.linear(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+
+<p>最后代码就被精简成这个样子（这里，我去掉可视化数据的代码）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#.... Omit above visualization code!</span></span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">simple_data = SimpleData()</span><br><span class="line">train_loader = DataLoader(dataset=simple_data, batch_size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create model</span></span><br><span class="line">linear_regression = LinearRegression()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">optimizer = optim.SGD(linear_regression.parameters(), lr=<span class="number">0.2</span>)</span><br><span class="line">criterion = nn.MSELoss() </span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> train_loader:</span><br><span class="line">        y_pred = linear_regression(x)</span><br><span class="line">        loss = criterion(y_pred, y)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment">#...Omit blow visualization code!</span></span><br></pre></td></tr></table></figure>
+
+<p>这样修改的代码可以完美解决上面我说的三个问题：不易维护、不易拓展、和不易开发。同时，通过调整DataLoader中参数batch_size的大小，可以随意切换训练方式（梯度下降、随机梯度下降、和小批量随机梯度下降）。最后，有一些基础知识的同学就能看出代码里还有一个问题：缺少验证数据集和测试数据集。这里，我只是像展示PyTorch这些基本函数的用法。如果，同学有兴趣，可以自己创造一个验证数据集和测试数据集，将其加入到整个模型训练和测试的流水线中。</p>
+<h4 id="3-2-2-例子-逻辑回归"><a href="#3-2-2-例子-逻辑回归" class="headerlink" title="3.2.2 例子-逻辑回归"></a>3.2.2 例子-逻辑回归</h4><p>经过上一个例子，同学们应该对PyTorch的基本函数有所了解了。现在，我们就换一个例子，用逻辑回归来进一步了解PyTorch的基本函数。</p>
+<div class="note "><p>机器学习有五大问题：分类、回归、聚类、降维、和强化。除了回归分析的应用最广，分类问题也是生活中遇到最多的问题之一。与回归分析不同，分类问题的目标是根据已知样本的某些特征，判断一个新的样本属于哪种已知的样本类。根据类别的数量还可以进一步将分类问题划分为二元分类和多元分类。同样，在分类问题中，最基本的算法就应当是逻辑回归了</p></div>
+
+<p>这里，我们用到一个最简单的分类问题数据集-<a href="https://zh.wikipedia.org/wiki/%E5%AE%89%E5%BE%B7%E6%A3%AE%E9%B8%A2%E5%B0%BE%E8%8A%B1%E5%8D%89%E6%95%B0%E6%8D%AE%E9%9B%86" target="_blank" rel="noopener">安德森鸢尾花卉数据集</a>。同学们可以从这个<a href="https://www.kaggle.com/uciml/iris" target="_blank" rel="noopener">链接</a>下载这个数据集。同样，这里我需要把数据的载入封装起来，通过继承torch.utils.data中的Dataset来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IrisData</span><span class="params">(Dataset)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        iris_data = pd.read_csv(<span class="string">'./Iris.csv'</span>)</span><br><span class="line">        self.x = torch.from_numpy(iris_data.loc[: <span class="number">99</span>, [<span class="string">'SepalLengthCm'</span>, <span class="string">'SepalWidthCm'</span>]].to_numpy(dtype=np.float32))</span><br><span class="line">        self.y = torch.cat([torch.zeros(<span class="number">50</span>), torch.ones(<span class="number">50</span>)]).view(<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">        self.len = self.y.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.len</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.x[index] , self.y[index]</span><br></pre></td></tr></table></figure>
+
+<p>然后再把模型的建立也封装起来，通过继承torch.nn中的Module来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(LogisticRegression, self).__init__()</span><br><span class="line">        self.linear = nn.Linear(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">        self.sigmoid = nn.Sigmoid()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        out = self.sigmoid(self.linear(x))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+
+<p>最后完整代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># Process data</span></span><br><span class="line">iris_data = pd.read_csv(<span class="string">'./Iris.csv'</span>)</span><br><span class="line">setosa = iris_data.loc[: <span class="number">49</span>][<span class="string">'SepalLengthCm'</span>].to_numpy(dtype=np.float32), iris_data.loc[: <span class="number">49</span>][<span class="string">'SepalWidthCm'</span>].to_numpy(dtype=np.float32)</span><br><span class="line">versicolor = iris_data.loc[<span class="number">50</span>:<span class="number">99</span>][<span class="string">'SepalLengthCm'</span>].to_numpy(dtype=np.float32), iris_data.loc[<span class="number">50</span>:<span class="number">99</span>][<span class="string">'SepalWidthCm'</span>].to_numpy(dtype=np.float32)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View data</span></span><br><span class="line">plt.title(<span class="string">'Logistic Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">plt.xlabel(<span class="string">'SepalLength (cm)'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.ylabel(<span class="string">'SepalWidth (cm)'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.scatter(setosa[<span class="number">0</span>], setosa[<span class="number">1</span>], color=<span class="string">'red'</span>, label=<span class="string">'setosa'</span>)</span><br><span class="line">plt.scatter(versicolor[<span class="number">0</span>], versicolor[<span class="number">1</span>], color=<span class="string">'blue'</span>, label=<span class="string">'versicolor'</span>)</span><br><span class="line">plt.legend(loc=<span class="number">1</span>, fontsize=<span class="string">'x-large'</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">lris_data = IrisData()</span><br><span class="line">train_loader = DataLoader(dataset=lris_data, batch_size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create Model</span></span><br><span class="line">logistic_regression = LogisticRegression()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">criterion = nn.BCELoss()      </span><br><span class="line">optimizer = optim.SGD(logistic_regression.parameters(), lr=<span class="number">0.2</span>)</span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> train_loader:</span><br><span class="line">        y_pred = logistic_regression(x)</span><br><span class="line">        loss = criterion(y_pred, y)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Plot and show training process</span></span><br><span class="line">    w0, w1 = logistic_regression.linear.weight.data.numpy()[<span class="number">0</span>]</span><br><span class="line">    b = logistic_regression.linear.bias.data.numpy()[<span class="number">0</span>]</span><br><span class="line">    plot_x = np.linspace(<span class="number">4</span>, <span class="number">8</span>, <span class="number">1000</span>)</span><br><span class="line">    plot_y = (-w0 * plot_x - b) / w1</span><br><span class="line">    plt.cla()</span><br><span class="line">    ax.set_title(<span class="string">'Logistic Regression'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">'SepalLength (cm)'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">'SepalWidth (cm)'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">3.5</span>, <span class="number">8.5</span>)</span><br><span class="line">    ax.set_ylim(<span class="number">1.0</span>, <span class="number">5.0</span>)</span><br><span class="line">    ax.scatter(setosa[<span class="number">0</span>], setosa[<span class="number">1</span>], color=<span class="string">'red'</span>, label=<span class="string">'setosa'</span>)</span><br><span class="line">    ax.scatter(versicolor[<span class="number">0</span>], versicolor[<span class="number">1</span>], color=<span class="string">'blue'</span>, label=<span class="string">'versicolor'</span>)</span><br><span class="line">    ax.plot(plot_x, plot_y, <span class="string">'g-'</span>, lw=<span class="number">3</span>)</span><br><span class="line">    ax.legend(loc=<span class="number">1</span>, fontsize=<span class="string">'x-large'</span>)</span><br><span class="line">    ax.text(<span class="number">7.5</span>, <span class="number">1.5</span>, </span><br><span class="line">            <span class="string">'Epoch = &#123;&#125;, Loss = &#123;:.2f&#125;'</span>.format(epoch, loss.data.numpy()), </span><br><span class="line">            fontdict=&#123;<span class="string">'size'</span>: <span class="number">10</span>, <span class="string">'color'</span>: <span class="string">'black'</span>&#125;)</span><br><span class="line">    fig.canvas.draw()     </span><br><span class="line">    img = np.frombuffer(fig.canvas.tostring_rgb(), dtype=<span class="string">'uint8'</span>)</span><br><span class="line">    img = img.reshape(fig.canvas.get_width_height()[::<span class="number">-1</span>] + (<span class="number">3</span>,))</span><br><span class="line">    img = Image.fromarray(img)</span><br><span class="line">    images_list.append(img)</span><br><span class="line">            </span><br><span class="line"><span class="comment"># save images as a gif    </span></span><br><span class="line">images_list[<span class="number">0</span>].save(<span class="string">'./logistic_regression.gif'</span>,</span><br><span class="line">                    save_all=<span class="literal">True</span>, </span><br><span class="line">                    append_images=images_list[<span class="number">1</span>:], </span><br><span class="line">                    optimize=<span class="literal">False</span>, </span><br><span class="line">                    duration=<span class="number">100</span>, </span><br><span class="line">                    loop=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码就是用PyTorch中的基本函数来解决一个逻辑回归问题。在LogisticRegression这个封装好的类里面，用到torch.nn中的Linear来先构建一个线性算子（行6），加上一个Sigmoid函数（行7），来构建一个逻辑回归算法模型。从实现逻辑回归算法模型的过程中，同学们可以清楚的看到逻辑回归就是线性回归套了一个Sigmoid函数的马甲。也可以说是线性回归站到了线性回归的肩膀上，看清楚了分类问题的本质。</p>
+<div class="note "><p>逻辑回归被很多人认为是处理回归问题的算法，但其实都被他的名字所欺骗。这个算法其实是用来处理分类问题的，为什么叫逻辑回归不叫逻辑分类。其原因是可以从统计和数学两个角度来解释其联系。从数学上，逻辑回归本质上是线性回归的延申，线性回归加了一个Sigmoid函数来处理线性可分的问题。从统计上，两个模型都属于广义线性模型，线性回归模型中要假设随机误差等方差并且服从正态分布，而逻辑回归需要假设随机变量的参数服从伯努利分布</p></div>
+
+<p>同样，我用torch.optim中的SGD建立一个优化方法（行32）。最后用，torch.nn中的BCELoss来定义损失函数（行31）。利用Pytoch训练定义好的模型和参数非常简单，只需要七行就可以搞定（上面行36到行42的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
+<p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成2维，并且处理的是一个二元分类问题。并且，我把整个训练过程可视化出来。</p>
+<img src='/images/pytorch_introduction_3.gif' style='width:600px'>
+
+<p>逻辑回归问题简单来讲就是在一个线性可分的数据中，找到一个线（如图中绿色的线），可以把两类数据分开。在IrisData这个封装好的类中，我抽取了两种花的数据（Setosa和versicolor），</p>
+<img src='/images/pytorch_introduction_4.png' style='width:600px'>
+
+<p>其中，红色点代表一类花，蓝色的点代表另一类花。萼片长度为X轴和萼片宽度为Y轴。从中的数据可以看出，这个数据在这两个维度上是线性可分的。</p>
+<p>第二节的公式（1）可以作为二元分类问题的损失函数。那么，逻辑回归的原始函数（假设）和参数应该怎么表达呢？其数学公式如下。</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \sigma(\theta_0 x_0 + \theta_1 x_1 + … + \theta_n x_n) \space \space where \space x_0 = 1<br>\end{equation}<br>$$</p>
+<p>从逻辑回归的数学表达式子中，可以看出其输出的是可能性(因为Sigmoid函数的值域是0到1)。所以需要进一步根据下面公式，输出具体的判定（0代表不是或者1代表是）</p>
+<p>$$<br>y = \begin{cases}<br>  1 &amp; \text{if } h_\theta(x) \geq 0.5 \\<br>  0 &amp; \text{if } h_\theta(x) &lt; 0.5<br>\end{cases}<br>$$</p>
+<p>最后，同3.2.1一样，这里缺少验证数据集和测试数据集。感兴趣同学有兴趣，可以自己分一个训练数据集、验证数据集、和测试数据集，然后将其加入到整个模型训练和测试的流水线中。</p>
+<h4 id="3-2-3-例子-神经网络"><a href="#3-2-3-例子-神经网络" class="headerlink" title="3.2.3 例子-神经网络"></a>3.2.3 例子-神经网络</h4><p>PyTorch是一个非常优秀的深度学习框架，而深度学习可以说是最简单的神经网络的延申。所以，我这里就用一个简单的神经网络做为例子，继续帮助学生理解这些PyTorch的基本函数。</p>
+<div class="note "><p>人工神经网络是一种计算模型，启发自人类大脑处理信息的生物神经网络。其本质上是多层感知器，也就是多层多路输出线性回归加一个激活函数。通过这个激活函数，每一路的输出最终形成一个神经元。这里，同一级众多的神经元最后形成了一层神经网络。其中第一层叫做输入层，中间所有层叫做隐藏层，最后一层叫做输出层。由于神经网络可以拟合任何函数，所以只需要将最后一个输出层替换成不同的结构，就可以处理各种机器学习问题</p></div>
+
+<p>下面我们就用PyTorch是实现一个神经网络来处理回归分析。由于神经网络可以拟合任何函数， 我这里利用一个非线性函数生成一个非线性的数据分布，看看这个神经网络可否帮我拟合这个函数。首先，我们还是需要将数据的载入封装起来，通过继承torch.utils.data中的Dataset来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComplexeData</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = torch.unsqueeze(torch.linspace(<span class="number">-10</span>, <span class="number">10</span>, <span class="number">100</span>), dim=<span class="number">1</span>)</span><br><span class="line">        noise = <span class="number">0.5</span> * torch.rand(self.x.size())  </span><br><span class="line">        self.y = torch.sin(self.x) + noise </span><br><span class="line">        self.len = self.y.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.len</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.x[index] , self.y[index]</span><br></pre></td></tr></table></figure>
+
+<p>然后再把模型的建立也封装起来，通过继承torch.nn中的Module来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NeuralNetworks</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(NeuralNetworks, self).__init__()</span><br><span class="line">        self.hidden_1 = nn.Linear(<span class="number">1</span>, <span class="number">200</span>)</span><br><span class="line">        self.hidden_2 = nn.Linear(<span class="number">200</span>, <span class="number">100</span>)</span><br><span class="line">        self.output = nn.Linear(<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">        self.relu = nn.ReLU()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        x = self.relu(self.hidden_1(x))</span><br><span class="line">        x = self.relu(self.hidden_2(x))</span><br><span class="line">        out = self.output(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+
+<p>最后完整代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> torch.optim <span class="keyword">as</span> optim</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create data</span></span><br><span class="line">x_train = torch.unsqueeze(torch.linspace(<span class="number">-10</span>, <span class="number">10</span>, <span class="number">100</span>), dim=<span class="number">1</span>)</span><br><span class="line">noise = <span class="number">0.5</span> * torch.rand(x_train.size())   </span><br><span class="line">y_train = torch.sin(x_train) + noise </span><br><span class="line"></span><br><span class="line"><span class="comment"># View data   </span></span><br><span class="line">plt.title(<span class="string">'Neural Networks Regression Analysis'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">plt.xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.scatter(x_train.data.numpy(), y_train.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">complex_data = ComplexeData()</span><br><span class="line">train_loader = DataLoader(dataset=complex_data, batch_size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create model</span></span><br><span class="line">neural_networks = NeuralNetworks()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">optimizer = optim.Adam(neural_networks.parameters(), lr=<span class="number">0.01</span>)</span><br><span class="line">criterion = nn.MSELoss() </span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> train_loader:</span><br><span class="line">        y_pred = neural_networks(x)</span><br><span class="line">        loss = criterion(y_pred, y)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># plot and show learning process </span></span><br><span class="line">    plt.cla()</span><br><span class="line">    ax.set_title(<span class="string">'Neural Networks Regression Analysis'</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">'x'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">'y'</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">    ax.set_xlim(<span class="number">-10.5</span>, <span class="number">10.5</span>)</span><br><span class="line">    ax.set_ylim(<span class="number">-1.5</span>, <span class="number">2</span>)</span><br><span class="line">    ax.scatter(x_train.data.numpy(), y_train.data.numpy(), color = <span class="string">"purple"</span>)</span><br><span class="line">    ax.plot(x_train.data.numpy(), y_pred.data.numpy(), <span class="string">'g-'</span>, lw=<span class="number">3</span>)</span><br><span class="line">    ax.text(<span class="number">6.0</span>, <span class="number">-1.0</span>, </span><br><span class="line">            <span class="string">'Epoch = &#123;&#125;, Loss = &#123;:.2f&#125;'</span>.format(epoch, loss.data.numpy()), </span><br><span class="line">            fontdict=&#123;<span class="string">'size'</span>: <span class="number">10</span>, <span class="string">'color'</span>: <span class="string">'black'</span>&#125;)</span><br><span class="line">    fig.canvas.draw()     </span><br><span class="line">    img = np.frombuffer(fig.canvas.tostring_rgb(), dtype=<span class="string">'uint8'</span>)</span><br><span class="line">    img = img.reshape(fig.canvas.get_width_height()[::<span class="number">-1</span>] + (<span class="number">3</span>,))</span><br><span class="line">    img = Image.fromarray(img)</span><br><span class="line">    images_list.append(img)</span><br><span class="line">            </span><br><span class="line"><span class="comment"># save images as a gif    </span></span><br><span class="line">images_list[<span class="number">0</span>].save(<span class="string">'./neural_networks_regression_analysis.gif'</span>,</span><br><span class="line">                    save_all=<span class="literal">True</span>, </span><br><span class="line">                    append_images=images_list[<span class="number">1</span>:], </span><br><span class="line">                    optimize=<span class="literal">False</span>, </span><br><span class="line">                    duration=<span class="number">100</span>, </span><br><span class="line">                    loop=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>上面是的代码，我用PyTorch中的基本函数来构造一个简单神经网络，去解决复杂的非线性回归分析。在NeuralNetworks这个封装好的类里面，利用torch.nn中的Linear构建一个输入层（行6），利用torch.nn中的Linear构建一个隐藏层（行7），利用torch.nn中的Linear构建一个输出层（行8）。同时，需要定义一个激活函数，利用torch.nn中的ReLU来实现（行9）。最后在forward函数中，把定义好的各种层和激活函数依次串起来。</p>
+<p>接下来，我用torch.optim中的Adam建立一个优化方法（行29）。最后用，torch.nn中的MSELoss来定义损失函数（26行）。利用Pytoch训练定义好的模型和参数非常简单，只需要七行就可以搞定（上面行34到行40的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
+<p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成1维。并且，我把整个训练过程可视化出来。</p>
+<img src='/images/pytorch_introduction_5.gif' style='width:600px'>
+
+<p>在3.2.1中，我解释过线性回归分析的算法。同理，这里用神经网络做回归分析，只需要将最后一个输出层改成输出的具体数值即可。这样就可以用来分析一个非线性分布的数据。从而找到一条线（如图中的绿色的线），来拟合整个数据分布。在ComplexeData这个封装好的类中, 我用下面的式子（其中我加了一些高斯噪音，为了模拟真实生活中的数据），创造了一个非线性的数据分布。</p>
+<p>$$<br>\begin{equation}<br>y = \sin(x)<br>\end{equation}<br>$$</p>
+<p>所以要拟合的的函数就是：</p>
+<p>$$<br>\begin{equation}<br>h_\theta(x) = \sin(x)<br>\end{equation}<br>$$</p>
+<p>因为还是回归分析，所以损失函数还是去衡量一条线到所有点的距离就叫损失。也就是，给定一些点（训练数据）去找这条线的方法（模型训练）就是，找到一条线离各个点的距离最小。所以其数学表达式还是：</p>
+<p>$$<br>\begin{equation}<br>J(\theta) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x_i)) - (y_i))^2<br>\end{equation}<br>$$</p>
+<p>由于神经网络是一个黑盒子，我们无法具体知道可能得到原始函数（假设）会是什么。所以，原始函数的参数也不知道是什么。但是我们每次训练好神经网络会产生一个所有神经元的权重信息。但是，这个权重信息并不能说明什么问题（现在很多研究开始尝试可视化这些权重信息，去尝试解释神经网络认为哪些是重要的信息）。上面可视化训练过程中，我们可以很直观的知道，这个神经网络基本是很好的拟合了原始函数（假设）。</p>
+<div class="note "><p>在实际生活中，很多非结构数据过于复杂，使得我们无法得知其真实的分布应该是什么。所以，我们无法正确的猜测其假设。因此，就需要一个更加庞大的训练集、验证集、和测试集去判定一个模型表现的好与坏。但是，即使有些神经网络在测试集上表现很好，也不会代表这个模型在实际生产和生活中表现的很好。个人认为，在实际生产和生活中，数据的分布可能不止一种。同时，没有通用的方法可以判定，这个数据或这类数据是什么什么分布。最重要，数据的收集过程和数据的标记会不会有很大的人为偏差？</p></div>
+
+<p>构建神经网络还有PyTorch还提供了另一种更加简单的方式。利用torch.nn中的Sequential可以将NeuralNetworks这个类替换掉。所以，我们只需要一个ComplexeData的类负责加载数据集就好了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComplexeData</span><span class="params">(Dataset)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = torch.unsqueeze(torch.linspace(<span class="number">-10</span>, <span class="number">10</span>, <span class="number">100</span>), dim=<span class="number">1</span>)</span><br><span class="line">        noise = <span class="number">0.5</span> * torch.rand(self.x.size())  </span><br><span class="line">        self.y = torch.sin(self.x) + noise </span><br><span class="line">        self.len = self.y.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.len</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, index)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.x[index] , self.y[index]</span><br></pre></td></tr></table></figure>
+
+<p>ComplexeData没有什么改动。但是，NeuralNetworks被换成了如下（这里，我去掉可视化数据的代码）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#.... Omit above visualization code!</span></span><br><span class="line"><span class="comment"># Load data</span></span><br><span class="line">complex_data = ComplexeData()</span><br><span class="line">train_loader = DataLoader(dataset=complex_data, batch_size=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create model</span></span><br><span class="line">neural_networks = nn.Sequential(</span><br><span class="line">      nn.Linear(<span class="number">1</span>, <span class="number">200</span>),</span><br><span class="line">      nn.ReLU(),</span><br><span class="line">      nn.Linear(<span class="number">200</span>, <span class="number">100</span>),</span><br><span class="line">      nn.ReLU(),</span><br><span class="line">      nn.Linear(<span class="number">100</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start training</span></span><br><span class="line">optimizer = optim.Adam(neural_networks.parameters(), lr=<span class="number">0.01</span>)</span><br><span class="line">criterion = nn.MSELoss() </span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">12</span>,<span class="number">7</span>))</span><br><span class="line">images_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> train_loader:</span><br><span class="line">        y_pred = neural_networks(x)</span><br><span class="line">        loss = criterion(y_pred, y)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment">#...Omit blow visualization code!</span></span><br></pre></td></tr></table></figure>
+
+<p>这两种建立神经网络都一样，但是不同的方法有不同的用户使用群。同理，torch.nn.functional 和 torch.nn也类似。torch.nn.init为科研人员提供了更为自由的权重初始化API。torch.autograd提供了类和函数用来对任意标量函数进行求导。要想使用自动求导，只需要对已有的代码进行微小的改变，并且将所有的tensor包含进Variable对象中即可。</p>
+<h4 id="3-2-4-深度神经网络"><a href="#3-2-4-深度神经网络" class="headerlink" title="3.2.4 深度神经网络"></a>3.2.4 深度神经网络</h4><p>深度神经网络可以看作是神经网络的进一步延申。深度神经网络拥有更多隐藏层，每一层的神经元也更多。同时，深度神经网络还有更复杂的结构，来处理各种不同的数据（例如，音频，文本，图片）。例如，卷积神经网络（CNN），专门用于处理图片数据；而循环神经网络（RNN），则更适合去处理文本数据。现在随着科技的发展，以及各行各业对AI的需求加大。更多类型的数据变的越来越流行（例如，点云），对应的深度神经网络结构也有很大变化。如果要继续细化深度神经网络，还可以根据所处理的不同问题（例如，音频的音频分类，文本的机器翻译，图像的目标检测），在结构上有千变万化的组合。</p>
+<p>最后，很多机器/深度学习的知识搞死记硬背是行不通的。需要自己同手推导公式，自己动手用代码实现公式。那么，PyTorch做为这么优秀的开源学习软件，为什么不去自己试试呢？用它来实现各种算法和网络，会不会是一件很酷的事情呢？</p>
+<h2 id="4-站在巨人肩上眺望"><a href="#4-站在巨人肩上眺望" class="headerlink" title="4 站在巨人肩上眺望"></a>4 站在巨人肩上眺望</h2><p>根据第三节中的三个例子，希望同学们能对PyTorch有一个大致的了解。同时从上面的三个例子中，可以看出PyTorch作为优秀的深度学习的框架，在搭建各种各样的深度神经网络可谓是非常简单。这里，也希望同学可以根据所处理和研究的问题，搭建起属于自己的深度神经网络。</p>
+<p>分析完基本函数，我们再来看基本数据结构。之前我说过，PyTorch之所以如此成功，是因为它站在了NumPy的肩膀是。为什么这个说呢？PyTorch中储存数据的基本单元叫tensor，而NumPy叫做ndarray。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">array_list = [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>], [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>]]</span><br><span class="line">pytorch_tensor = torch.tensor(array_list)</span><br><span class="line">numpy_ndarray = np.array(array_list)</span><br><span class="line">print(<span class="string">"Create PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor))</span><br><span class="line">print(<span class="string">"Create NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert PyTorch Tensor to NumPy Ndarray is: &#123;&#125;"</span>.format(pytorch_tensor.numpy()==numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert NumPy Ndarray to PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor==torch.from_numpy(numpy_ndarray)))</span><br><span class="line">print(<span class="string">"The data type in PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor.dtype))</span><br><span class="line">print(<span class="string">"The data type in NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray.dtype))</span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，PyTorch的tensor不仅可以和NumPy中的ndarray相互切换，访问数据类型的函数都是一样的。更重要的是，NumPy中有的对ndarray的各种操作，PyTorch中的tensor也都一摸一样。这时很多同学就会反问了：“这不是基本操作吗？”对，正式因为基本操作，PyTorch就直接拿来一用，这不香吗？虽然，NumPy底层是用C实现的，而PyTorch大多功能是用C++实现的。但是，用什么方式和语言实现都是次要，关键是PyTorch模仿了很多NumPy东西。比如功能设计的非常人性，运算速度快，误差极小，从数据结构到各种算法的优化方式。最最最重要的是ndarray支持并行化运算（向量化运算），而且底层使用C语言编写，内部解除了GIL（全局解释器锁），其对数组的操作速度不受Python解释器的限制。这些NumPy的优点使得PyTorch去实现很多设计理念变的非常容易。所以站在巨人肩膀上的方式，不是简单的复制粘贴被人的东西；而是，借鉴巨人的设计思路，模仿巨人的实现方式。</p>
+<p>最后PyTorch站在NumPy的肩膀上，一举横扫诸深度神经网络框架。那你是否想站在PyTorch的肩膀上，去探索深度学习的世界？</p>
+<h2 id="5-最后寄语"><a href="#5-最后寄语" class="headerlink" title="5 最后寄语"></a>5 最后寄语</h2><p>大量练习写PyTorch代码！很多东西靠看是学不会的，自动动手写一写。哪怕重写一些教程都比死记硬背的要好的多。</p>
+<p>在创业公司工作，每年都会遇到一到两个大型开源项目，时不时还有很多小的开源项目。在FLAG工作也一样，虽然基本都在做公司的东西，但是也需要经常去学习和参考别人是怎么做的，有什么新的设计理念，有什么新的技术，有什么新功能需要实现。所以，希望同学可以掌握或者总结一套自己的学习方法，去面对未来高速发展的社会。</p>
+<p>再次感谢这些做开源项目的人！致敬！</p>
+<h2 id="6-Study-materials-学习资料"><a href="#6-Study-materials-学习资料" class="headerlink" title="6 Study materials 学习资料"></a>6 Study materials 学习资料</h2><br/> 
+
+<div class="btns circle grid3">
+            <a href='https://pytorch.org/docs/stable/index.html' target="_blank" rel="noopener" title='PyTorch Documentation'><i class='fas fa-book'></i>PyTorch Documentation</a>
+<a href='https://pytorch.org/tutorials/' target="_blank" rel="noopener" title='PyTorch Tutorials'><i class='fas fa-book'></i>PyTorch Tutorials</a>
+<a href='https://pytorch.org/deep-learning-with-pytorch' target="_blank" rel="noopener" title='Deep Learning with PyTorch'><i class='fas fa-book'></i>Deep Learning with PyTorch</a>
+          </div>
+
+<div class="btns circle grid3">
+            <a href='https://www.coursera.org/learn/deep-neural-networks-with-pytorch' target="_blank" rel="noopener" title='Deep Neural Networks with PyTorch'><i class='fas fa-school'></i>Deep Neural Networks with PyTorch</a>
+<a href='https://github.com/pytorch/examples' target="_blank" rel="noopener" title='PyTorch Examples'><i class='fab fa-github-square'></i>PyTorch Examples</a>
+<a href='https://discuss.pytorch.org/' target="_blank" rel="noopener" title='PyTorch Discuss'><i class='fas fa-question-circle'></i>PyTorch Discuss</a>
+          </div>
+
+<h2 id="7-Reference-引用"><a href="#7-Reference-引用" class="headerlink" title="7 Reference 引用"></a>7 Reference 引用</h2><details ><summary> <p>View All 查看全部</p> </summary>
+              <div class='content'>
+              <ul><li>PyTorch: An Imperative Style, High-Performance Deep Learning Library, Adam Paszke et al., <em>NeurIPS, 2019</em> - <a href="https://arxiv.org/pdf/1912.01703.pdf" target="_blank" rel="noopener">paper link</a> </li><li>Regression with Neural Networks in PyTorch, Ben Phillips, Medium - <a href="https://medium.com/@benjamin.phillips22/simple-regression-with-neural-networks-in-pytorch-313f06910379" target="_blank" rel="noopener">link</a></li></ul>
+              </div>
+            </details>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-13T02:29:37-07:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>Update on：Jul 13, 2020</p>
+  </a>
+</div>
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+      </section>
+    </article>
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>Contents</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Introduction-开门不见山"><span class="toc-text">1 Introduction 开门不见山</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-拨开迷雾见月明"><span class="toc-text">2 拨开迷雾见月明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-分类讨论和按需理解"><span class="toc-text">3 分类讨论和按需理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-分类讨论"><span class="toc-text">3.1 分类讨论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-按需理解"><span class="toc-text">3.2 按需理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-例子-线性回归"><span class="toc-text">3.2.1 例子-线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-例子-逻辑回归"><span class="toc-text">3.2.2 例子-逻辑回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-例子-神经网络"><span class="toc-text">3.2.3 例子-神经网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-深度神经网络"><span class="toc-text">3.2.4 深度神经网络</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-站在巨人肩上眺望"><span class="toc-text">4 站在巨人肩上眺望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-最后寄语"><span class="toc-text">5 最后寄语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Study-materials-学习资料"><span class="toc-text">6 Study materials 学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Reference-引用"><span class="toc-text">7 Reference 引用</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.3'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='340px'
+      server='tencent'
+      type='search'
+      id='Mozart Lang Lang'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="mailto:weikunhan@gmail.com"
+                class="social fas fa-envelope-square flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/weikunhan/"
+                class="social fab fa-github-square flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://www.linkedin.com/in/weikunhan/"
+                class="social fab fa-linkedin flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://scholar.google.com/citations?user=MOfRj_YAAAAJ&amp;hl=en/"
+                class="social fas fa-university flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/resumes/curriculum_vitae_1.pdf"
+                class="social fas fa-file-download flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://weikunhan.github.io">Copyright © 2020 Weikun Han</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A2.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_B1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_C1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D2.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "30000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "30000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        var clipboard = new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+                return trigger.nextElementSibling
+            }
+        });
+        clipboard.on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+  
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+      var currentUrl = window.location.pathname;
+      var targetUrl = e.triggerElement.href;
+      var banUrl = [""];
+      if (banUrl[0] != "") {
+        banUrl.forEach(item => {
+          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+            window.location.href = targetUrl;
+          }
+        });
+      }
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(window).unbind('click');     // 解绑
+      $(document).unbind('scroll');  // 解绑
+      window.ShowLoading();
+    });
+  
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+  
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+      
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+  
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+  
+    document.addEventListener('pjax:error', function (e) { 
+      window.HideLoading(); 
+      window.location.href = e.triggerElement.href; 
+    }); 
+</script>
+  
+    
+  </div>
+</body>
+</html>
