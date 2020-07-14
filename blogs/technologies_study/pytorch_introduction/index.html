@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Standing on the Shoulders of Pytorch to Learn Deep Learning - Weikun Han&#39;s Website</title>
+  <title>Standing on the Shoulders of Pytorch to Study Deep Learning - Weikun Han&#39;s Website</title>
   
 
   
@@ -575,7 +575,7 @@
           
   <h1 class="title">
     <a href="/blogs/technologies_study/pytorch_introduction/index.html">
-      Standing on the Shoulders of Pytorch to Learn Deep Learning
+      Standing on the Shoulders of Pytorch to Study Deep Learning
     </a>
   </h1>
 
@@ -800,7 +800,7 @@
 <p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成2维，并且处理的是一个二元分类问题。并且，我把整个训练过程可视化出来。</p>
 <img src='/images/pytorch_introduction_3.gif' style='width:600px'>
 
-<p>逻辑回归问题简单来讲就是在一个线性可分的数据中，找到一个线（如图中绿色的线），可以把两类数据分开。在IrisData这个封装好的类中，我抽取了两种花的数据（Setosa和versicolor），</p>
+<p>逻辑回归问题简单来讲就是在一个线性可分的数据中，找到一个线（如图中绿色的线），可以把两类数据分开。在IrisData这个封装好的类中，我抽取了两种花的数据（Setosa和versicolor）。</p>
 <img src='/images/pytorch_introduction_4.png' style='width:600px'>
 
 <p>其中，红色点代表一类花，蓝色的点代表另一类花。萼片长度为X轴和萼片宽度为Y轴。从中的数据可以看出，这个数据在这两个维度上是线性可分的。</p>
@@ -831,7 +831,7 @@
 <p>所以要拟合的的函数就是：</p>
 <p>$$<br>\begin{equation}<br>h_\theta(x) = \sin(x)<br>\end{equation}<br>$$</p>
 <p>因为还是回归分析，所以损失函数还是去衡量一条线到所有点的距离就叫损失。也就是，给定一些点（训练数据）去找这条线的方法（模型训练）就是，找到一条线离各个点的距离最小。所以其数学表达式还是：</p>
-<p>$$<br>\begin{equation}<br>J(\theta) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x_i)) - (y_i))^2<br>\end{equation}<br>$$</p>
+<p>$$<br>\begin{equation}<br>J(\Theta) = \frac{1}{m} \sum_{i=1}^m (h_\Theta(x_i)) - (y_i))^2<br>\end{equation}<br>$$</p>
 <p>由于神经网络是一个黑盒子，我们无法具体知道可能得到原始函数（假设）会是什么。所以，原始函数的参数也不知道是什么。但是我们每次训练好神经网络会产生一个所有神经元的权重信息。但是，这个权重信息并不能说明什么问题（现在很多研究开始尝试可视化这些权重信息，去尝试解释神经网络认为哪些是重要的信息）。上面可视化训练过程中，我们可以很直观的知道，这个神经网络基本是很好的拟合了原始函数（假设）。</p>
 <div class="note "><p>在实际生活中，很多非结构数据过于复杂，使得我们无法得知其真实的分布应该是什么。所以，我们无法正确的猜测其假设。因此，就需要一个更加庞大的训练集、验证集、和测试集去判定一个模型表现的好与坏。但是，即使有些神经网络在测试集上表现很好，也不会代表这个模型在实际生产和生活中表现的很好。个人认为，在实际生产和生活中，数据的分布可能不止一种。同时，没有通用的方法可以判定，这个数据或这类数据是什么什么分布。最重要，数据的收集过程和数据的标记会不会有很大的人为偏差？</p></div>
 
@@ -846,7 +846,7 @@
 <p>最后，很多机器/深度学习的知识搞死记硬背是行不通的。需要自己同手推导公式，自己动手用代码实现公式。那么，PyTorch做为这么优秀的开源学习软件，为什么不去自己试试呢？用它来实现各种算法和网络，会不会是一件很酷的事情呢？</p>
 <h2 id="4-站在巨人肩上眺望"><a href="#4-站在巨人肩上眺望" class="headerlink" title="4 站在巨人肩上眺望"></a>4 站在巨人肩上眺望</h2><p>根据第三节中的三个例子，希望同学们能对PyTorch有一个大致的了解。同时从上面的三个例子中，可以看出PyTorch作为优秀的深度学习的框架，在搭建各种各样的深度神经网络可谓是非常简单。这里，也希望同学可以根据所处理和研究的问题，搭建起属于自己的深度神经网络。</p>
 <p>分析完基本函数，我们再来看基本数据结构。之前我说过，PyTorch之所以如此成功，是因为它站在了NumPy的肩膀是。为什么这个说呢？PyTorch中储存数据的基本单元叫tensor，而NumPy叫做ndarray。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">array_list = [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>], [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>]]</span><br><span class="line">pytorch_tensor = torch.tensor(array_list)</span><br><span class="line">numpy_ndarray = np.array(array_list)</span><br><span class="line">print(<span class="string">"Create PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor))</span><br><span class="line">print(<span class="string">"Create NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert PyTorch Tensor to NumPy Ndarray is: &#123;&#125;"</span>.format(pytorch_tensor.numpy()==numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert NumPy Ndarray to PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor==torch.from_numpy(numpy_ndarray)))</span><br><span class="line">print(<span class="string">"The data type in PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor.dtype))</span><br><span class="line">print(<span class="string">"The data type in NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray.dtype))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">array_list = [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>], [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>]]</span><br><span class="line">pytorch_tensor = torch.tensor(array_list)</span><br><span class="line">numpy_ndarray = np.array(array_list)</span><br><span class="line">print(<span class="string">"Create PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor))</span><br><span class="line">print(<span class="string">"Create NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert PyTorch Tensor to NumPy Ndarray is same: &#123;&#125;"</span>.format(pytorch_tensor.numpy()==numpy_ndarray))</span><br><span class="line">print(<span class="string">"Convert NumPy Ndarray to PyTorch Tensor is same: &#123;&#125;"</span>.format(pytorch_tensor==torch.from_numpy(numpy_ndarray)))</span><br><span class="line">print(<span class="string">"The data type in PyTorch Tensor is: &#123;&#125;"</span>.format(pytorch_tensor.dtype))</span><br><span class="line">print(<span class="string">"The data type in NumPy Ndarray is: &#123;&#125;"</span>.format(numpy_ndarray.dtype))</span><br></pre></td></tr></table></figure>
 
 <p>在上面的例子中，PyTorch的tensor不仅可以和NumPy中的ndarray相互切换，访问数据类型的函数都是一样的。更重要的是，NumPy中有的对ndarray的各种操作，PyTorch中的tensor也都一摸一样。这时很多同学就会反问了：“这不是基本操作吗？”对，正式因为基本操作，PyTorch就直接拿来一用，这不香吗？虽然，NumPy底层是用C实现的，而PyTorch大多功能是用C++实现的。但是，用什么方式和语言实现都是次要，关键是PyTorch模仿了很多NumPy东西。比如功能设计的非常人性，运算速度快，误差极小，从数据结构到各种算法的优化方式。最最最重要的是ndarray支持并行化运算（向量化运算），而且底层使用C语言编写，内部解除了GIL（全局解释器锁），其对数组的操作速度不受Python解释器的限制。这些NumPy的优点使得PyTorch去实现很多设计理念变的非常容易。所以站在巨人肩膀上的方式，不是简单的复制粘贴被人的东西；而是，借鉴巨人的设计思路，模仿巨人的实现方式。</p>
 <p>最后PyTorch站在NumPy的肩膀上，一举横扫诸深度神经网络框架。那你是否想站在PyTorch的肩膀上，去探索深度学习的世界？</p>
@@ -882,7 +882,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-13T02:29:37-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-13T23:35:02-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>Update on：Jul 13, 2020</p>
