@@ -807,7 +807,7 @@
 <p>第二节的公式（1）可以作为二元分类问题的损失函数。那么，逻辑回归的原始函数（假设）和参数应该怎么表达呢？其数学公式如下。</p>
 <p>$$<br>\begin{equation}<br>h_\theta(x) = \sigma(\theta_0 x_0 + \theta_1 x_1 + … + \theta_n x_n) \space \space where \space x_0 = 1<br>\end{equation}<br>$$</p>
 <p>从逻辑回归的数学表达式子中，可以看出其输出的是可能性(因为Sigmoid函数的值域是0到1)。所以需要进一步根据下面公式，输出具体的判定（0代表不是或者1代表是）</p>
-<p>$$<br>y = \begin{cases}<br>  1 &amp; \text{if } h_\theta(x) \geq 0.5 \\<br>  0 &amp; \text{if } h_\theta(x) &lt; 0.5<br>\end{cases}<br>$$</p>
+<p>$$<br>\begin{equation}<br>y = \begin{cases}<br>  1 &amp; \text{if } h_\theta(x) \geq 0.5 \\<br>  0 &amp; \text{if } h_\theta(x) &lt; 0.5<br>\end{cases}<br>\end{equation}<br>$$</p>
 <p>最后，同3.2.1一样，这里缺少验证数据集和测试数据集。感兴趣同学有兴趣，可以自己分一个训练数据集、验证数据集、和测试数据集，然后将其加入到整个模型训练和测试的流水线中。</p>
 <h4 id="3-2-3-例子-神经网络"><a href="#3-2-3-例子-神经网络" class="headerlink" title="3.2.3 例子-神经网络"></a>3.2.3 例子-神经网络</h4><p>PyTorch是一个非常优秀的深度学习框架，而深度学习可以说是最简单的神经网络的延申。所以，我这里就用一个简单的神经网络做为例子，继续帮助学生理解这些PyTorch的基本函数。</p>
 <div class="note "><p>人工神经网络是一种计算模型，启发自人类大脑处理信息的生物神经网络。其本质上是多层感知器，也就是多层多路输出线性回归加一个激活函数。通过这个激活函数，每一路的输出最终形成一个神经元。这里，同一级众多的神经元最后形成了一层神经网络。其中第一层叫做输入层，中间所有层叫做隐藏层，最后一层叫做输出层。由于神经网络可以拟合任何函数，所以只需要将最后一个输出层替换成不同的结构，就可以处理各种机器学习问题</p></div>
@@ -882,10 +882,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-13T23:35:02-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-14T11:06:09-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Update on：Jul 13, 2020</p>
+    <p>Update on：Jul 14, 2020</p>
   </a>
 </div>
 
