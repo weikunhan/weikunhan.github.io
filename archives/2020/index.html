@@ -81,71 +81,53 @@
   </div>
   <div class='b'>
     <div class='menu navigation featured'>
-      <ul class='cover-list-h'>
+      <div class='list-h'>
         
           
-            <li>
-              <a class="nav home"
-                href="/"
-                
-                
-                id="home">
-                <i class='fas fa-home fa-fw'></i>Home
-              </a>
-            </li>
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>Home</p>
+            </a>
           
-            <li>
-              <a class="nav home"
-                href="/publications"
-                
-                
-                id="publications">
-                <i class='fas fa-file-alt fa-fw'></i>Publications
-              </a>
-            </li>
+            <a href="/publications"
+              
+              
+              id="publications">
+              <i class='fas fa-file-alt fa-fw'></i><p>Publications</p>
+            </a>
           
-            <li>
-              <a class="nav home"
-                href="/projects"
-                
-                
-                id="projects">
-                <i class='fas fa-robot fa-fw'></i>Projects
-              </a>
-            </li>
+            <a href="/projects"
+              
+              
+              id="projects">
+              <i class='fas fa-robot fa-fw'></i><p>Projects</p>
+            </a>
           
-            <li>
-              <a class="nav home"
-                href="/courses"
-                
-                
-                id="courses">
-                <i class='fas fa-graduation-cap fa-fw'></i>Courses
-              </a>
-            </li>
+            <a href="/courses"
+              
+              
+              id="courses">
+              <i class='fas fa-graduation-cap fa-fw'></i><p>Courses</p>
+            </a>
           
-            <li>
-              <a class="nav home"
-                href="/awards"
-                
-                
-                id="awards">
-                <i class='fas fa-trophy fa-fw'></i>Awards
-              </a>
-            </li>
+            <a href="/awards"
+              
+              
+              id="awards">
+              <i class='fas fa-trophy fa-fw'></i><p>Awards</p>
+            </a>
           
-            <li>
-              <a class="nav home"
-                href="/blogs"
-                
-                
-                id="blogs">
-                <i class='fas fa-blog fa-fw'></i>Blogs
-              </a>
-            </li>
+            <a href="/blogs"
+              
+              
+              id="blogs">
+              <i class='fas fa-blog fa-fw'></i><p>Blogs</p>
+            </a>
           
         
-      </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -271,8 +253,60 @@
                     
                       
             
-              <li class='header'>
-                Coming Soon
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  Research Projects
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  0pen Source Projects
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  Individual Projects
+                </a>
+                
               </li>
             
           
@@ -439,8 +473,60 @@
                     
                       
             
-              <li class='header'>
-                Coming Soon
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  Research Projects
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  0pen Source Projects
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  Individual Projects
+                </a>
+                
               </li>
             
           
@@ -915,7 +1001,7 @@
 
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
 
@@ -1037,7 +1123,7 @@
       mathJax: 'false',
       enableQQ: 'true',
       requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
     })
   }
@@ -1096,24 +1182,9 @@
 	  label: '🌓',
 	  autoMatchOsTheme: true
 	};
-	// 卡片兼容处理
+	// 卡片兼容处理 mix-blend-mode 与 effect: [shadow, floatable, blur] 冲突???
 	function pjax_darkmodejs(){
-		if(!supportCss3('mix-blend-mode'))return;
-		var checkExist2 = setInterval(function() {
-		   if (typeof jQuery == 'undefined'){return;}
-		   clearInterval(checkExist2);
-		   var TopFlag=getClientHeight();
-			$(window).scroll(function(){
-				var top = $(document).scrollTop();
-				if(top > TopFlag) {
-					$(".darkmode-layer").css("mix-blend-mode","normal");
-					$(".darkmode-layer").css("background-color","#000");
-				}else{
-					$(".darkmode-layer").css("mix-blend-mode","difference");
-					$(".darkmode-layer").css("background-color","");
-				}
-			})
-		}, 100);
+		
 	}
 	// mix-blend-mode support?
 	if(supportCss3('mix-blend-mode')){
@@ -1285,7 +1356,7 @@
 
 
   
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
 
 
 
