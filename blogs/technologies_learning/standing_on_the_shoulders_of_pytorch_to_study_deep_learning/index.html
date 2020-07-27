@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+<head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -78,15 +78,7 @@
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="Search..." />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
+    <div class='menu navigation featured'>
       <ul class='cover-list-h'>
         
           
@@ -175,7 +167,7 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/new_weikun_han_web_1.png'/>
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/new_weikun_han_web_1.png'/>
           
           
           
@@ -516,6 +508,7 @@
   </div>
   
 
+
   <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
@@ -528,6 +521,10 @@
   <div id="pjax-ispage">false</div>
   <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
+  <div id="pjax-permalink">https://weikunhan.github.io/blogs/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/index.html</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -574,7 +571,7 @@
         
           
   <h1 class="title">
-    <a href="/blogs/technologies_study/pytorch_introduction/index.html">
+    <a href="/blogs/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/index.html">
       Standing on the Shoulders of Pytorch to Study Deep Learning
     </a>
   </h1>
@@ -624,7 +621,7 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <img src='/images/pytorch_introduction_1.png' alt='当你学会站在巨人的肩膀上，你突然发现可以看到更远的山川 - 韩劲谦' style='width:600px'>
+          <img src='/images/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/image_1.png' alt='当你学会站在巨人的肩膀上，你突然发现可以看到更远的山川 - 韩劲谦' style='width:600px'>
 
 <a id="more"></a> 
 
@@ -761,7 +758,7 @@
 
 <p>上面是一个完整展示，用PyTorch中的基本函数来解决一个线性回归分析。其中我用到torch.nn中的Linear来构建一个线性回归的算法模型（行22）。然后用torch.optim中的SGD建立一个优化方法（行25）。最后用，torch.nn中的MSELoss来定义损失函数（26行）。利用Pytoch训练定义好的模型和参数非常简单，只需要六行就可以搞定（上面行30到行35的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
 <p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成1维。并且，我把整个训练过程可视化出来。</p>
-<img src='/images/pytorch_introduction_2.gif' style='width:600px'>
+<img src='/images/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/image_2.gif' style='width:600px'>
 
 <p>线性回归分析简单来讲就是在一个线性分布的数据中，找到一个线（如图中的绿色的线），来拟合整个数据分布。代码中（9行到12行），我创建了一个线性分布的数据根据下面的式子（其中我加了一些高斯噪音，为了模拟真实生活中的数据）。</p>
 <p>$$<br>\begin{equation}<br>y = 5 + 5 x<br>\end{equation}<br>$$</p>
@@ -800,10 +797,10 @@
 
 <p>同样，我用torch.optim中的SGD建立一个优化方法（行32）。最后用，torch.nn中的BCELoss来定义损失函数（行31）。利用Pytoch训练定义好的模型和参数非常简单，只需要七行就可以搞定（上面行36到行42的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
 <p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成2维，并且处理的是一个二元分类问题。并且，我把整个训练过程可视化出来。</p>
-<img src='/images/pytorch_introduction_3.gif' style='width:600px'>
+<img src='/images/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/image_3.gif' style='width:600px'>
 
 <p>逻辑回归问题简单来讲就是在一个线性可分的数据中，找到一个线（如图中绿色的线），可以把两类数据分开。在IrisData这个封装好的类中，我抽取了两种花的数据（Setosa和versicolor）。</p>
-<img src='/images/pytorch_introduction_4.png' style='width:600px'>
+<img src='/images/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/image_4.png' style='width:600px'>
 
 <p>其中，红色点代表一类花，蓝色的点代表另一类花。萼片长度为X轴和萼片宽度为Y轴。从中的数据可以看出，这个数据在这两个维度上是线性可分的。</p>
 <p>第二节的公式（1）可以作为二元分类问题的损失函数。那么，逻辑回归的原始函数（假设）和参数应该怎么表达呢？其数学公式如下。</p>
@@ -826,7 +823,7 @@
 <p>上面是的代码，我用PyTorch中的基本函数来构造一个简单神经网络，去解决复杂的非线性回归分析。在NeuralNetworks这个封装好的类里面，利用torch.nn中的Linear构建一个输入层（行6），利用torch.nn中的Linear构建一个隐藏层（行7），利用torch.nn中的Linear构建一个输出层（行8）。同时，需要定义一个激活函数，利用torch.nn中的ReLU来实现（行9）。最后在forward函数中，把定义好的各种层和激活函数依次串起来。</p>
 <p>接下来，我用torch.optim中的Adam建立一个优化方法（行29）。最后用，torch.nn中的MSELoss来定义损失函数（26行）。利用Pytoch训练定义好的模型和参数非常简单，只需要七行就可以搞定（上面行34到行40的代码）。剩下的代码都是做可视化用的，这个同学不需要理解。</p>
 <p>为了让同学更直观的看到训练过程，我将输入变量（特征值）的维度设置成1维。并且，我把整个训练过程可视化出来。</p>
-<img src='/images/pytorch_introduction_5.gif' style='width:600px'>
+<img src='/images/technologies_learning/standing_on_the_shoulders_of_pytorch_to_study_deep_learning/image_5.gif' style='width:600px'>
 
 <p>在3.2.1中，我解释过线性回归分析的算法。同理，这里用神经网络做回归分析，只需要将最后一个输出层改成输出的具体数值即可。这样就可以用来分析一个非线性分布的数据。从而找到一条线（如图中的绿色的线），来拟合整个数据分布。在ComplexeData这个封装好的类中, 我用下面的式子（其中我加了一些高斯噪音，为了模拟真实生活中的数据），创造了一个非线性的数据分布。</p>
 <p>$$<br>\begin{equation}<br>y = \sin(x)<br>\end{equation}<br>$$</p>
@@ -885,10 +882,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-18T22:27:50-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-25T12:19:22-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Update on：Jul 18, 2020</p>
+    <p>Update on：Jul 25, 2020</p>
   </a>
 </div>
 
@@ -1262,6 +1259,76 @@
 
 <!-- darkmodejs -->
 
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+  <script type="text/javascript">
+	function getClientHeight(){
+	  var clientHeight=0;
+	  if(document.body.clientHeight&&document.documentElement.clientHeight){
+	  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }else{
+	  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  return clientHeight;
+	}
+	function supportCss3(style) {
+		var prefix = ['webkit', 'Moz', 'ms', 'o'],
+		i,
+		humpString = [],
+		htmlStyle = document.documentElement.style,
+		_toHumb = function (string) {
+		return string.replace(/-(\w)/g, function ($0, $1) {
+		return $1.toUpperCase();
+		});
+		};
+		for (i in prefix)
+		humpString.push(_toHumb(prefix[i] + '-' + style));
+		humpString.push(_toHumb(style));
+		for (i in humpString)
+		if (humpString[i] in htmlStyle) return true;
+		return false;
+	};
+	//配置信息
+	var options = {
+	  bottom: '32px',
+	  right: 'unset',
+	  left: '16px',
+	  time: '0s',
+	  mixColor: '#f4f4f4',
+	  backgroundColor: '#f4f4f4',
+	  buttonColorDark: '#100f2c',
+	  buttonColorLight: '#f4f4f4',
+	  saveInCookies: true,
+	  label: '🌓',
+	  autoMatchOsTheme: true
+	};
+	// 卡片兼容处理
+	function pjax_darkmodejs(){
+		if(!supportCss3('mix-blend-mode'))return;
+		var checkExist2 = setInterval(function() {
+		   if (typeof jQuery == 'undefined'){return;}
+		   clearInterval(checkExist2);
+		   var TopFlag=getClientHeight();
+			$(window).scroll(function(){
+				var top = $(document).scrollTop();
+				if(top > TopFlag) {
+					$(".darkmode-layer").css("mix-blend-mode","normal");
+					$(".darkmode-layer").css("background-color","#000");
+				}else{
+					$(".darkmode-layer").css("mix-blend-mode","difference");
+					$(".darkmode-layer").css("background-color","");
+				}
+			})
+		}, 100);
+	}
+	// mix-blend-mode support?
+	if(supportCss3('mix-blend-mode')){
+		const darkmode = new Darkmode(options);
+		darkmode.showWidget();
+		pjax_darkmodejs();
+	}
+  </script>
 
 
 <!-- 复制 -->
@@ -1474,16 +1541,20 @@
 
     document.addEventListener('pjax:send', function (e) {
       window.stop(); // 相当于点击了浏览器的停止按钮
-      var currentUrl = window.location.pathname;
-      var targetUrl = e.triggerElement.href;
-      var banUrl = [""];
-      if (banUrl[0] != "") {
-        banUrl.forEach(item => {
-          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-            window.location.href = targetUrl;
-          }
-        });
-      }
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+      
       window.subData = null; // 移除标题（用于一二级导航栏切换处）
       $.fancybox.close();    // 关闭弹窗
       $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
@@ -1540,6 +1611,10 @@
           pjax_valine();
         
         
+        
+        
+        
+          pjax_darkmodejs();
         
       } catch (e) {
         console.log(e);

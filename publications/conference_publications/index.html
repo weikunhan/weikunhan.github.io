@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#3.0-beta1'>
+<head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -78,15 +78,7 @@
     
   </div>
   <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="Search..." />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
+    <div class='menu navigation featured'>
       <ul class='cover-list-h'>
         
           
@@ -175,7 +167,7 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/new_weikun_han_web_1.png'/>
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/new_weikun_han_web_1.png'/>
           
           
           
@@ -516,6 +508,7 @@
   </div>
   
 
+
   <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
@@ -528,6 +521,10 @@
   <div id="pjax-ispage">false</div>
   <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
+  <div id="pjax-permalink">https://weikunhan.github.io/publications/conference_publications/index.html</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
   
   
 </div>
@@ -918,6 +915,76 @@
 
 <!-- darkmodejs -->
 
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+  <script type="text/javascript">
+	function getClientHeight(){
+	  var clientHeight=0;
+	  if(document.body.clientHeight&&document.documentElement.clientHeight){
+	  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }else{
+	  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  return clientHeight;
+	}
+	function supportCss3(style) {
+		var prefix = ['webkit', 'Moz', 'ms', 'o'],
+		i,
+		humpString = [],
+		htmlStyle = document.documentElement.style,
+		_toHumb = function (string) {
+		return string.replace(/-(\w)/g, function ($0, $1) {
+		return $1.toUpperCase();
+		});
+		};
+		for (i in prefix)
+		humpString.push(_toHumb(prefix[i] + '-' + style));
+		humpString.push(_toHumb(style));
+		for (i in humpString)
+		if (humpString[i] in htmlStyle) return true;
+		return false;
+	};
+	//配置信息
+	var options = {
+	  bottom: '32px',
+	  right: 'unset',
+	  left: '16px',
+	  time: '0s',
+	  mixColor: '#f4f4f4',
+	  backgroundColor: '#f4f4f4',
+	  buttonColorDark: '#100f2c',
+	  buttonColorLight: '#f4f4f4',
+	  saveInCookies: true,
+	  label: '🌓',
+	  autoMatchOsTheme: true
+	};
+	// 卡片兼容处理
+	function pjax_darkmodejs(){
+		if(!supportCss3('mix-blend-mode'))return;
+		var checkExist2 = setInterval(function() {
+		   if (typeof jQuery == 'undefined'){return;}
+		   clearInterval(checkExist2);
+		   var TopFlag=getClientHeight();
+			$(window).scroll(function(){
+				var top = $(document).scrollTop();
+				if(top > TopFlag) {
+					$(".darkmode-layer").css("mix-blend-mode","normal");
+					$(".darkmode-layer").css("background-color","#000");
+				}else{
+					$(".darkmode-layer").css("mix-blend-mode","difference");
+					$(".darkmode-layer").css("background-color","");
+				}
+			})
+		}, 100);
+	}
+	// mix-blend-mode support?
+	if(supportCss3('mix-blend-mode')){
+		const darkmode = new Darkmode(options);
+		darkmode.showWidget();
+		pjax_darkmodejs();
+	}
+  </script>
 
 
 <!-- 复制 -->
@@ -1130,16 +1197,20 @@
 
     document.addEventListener('pjax:send', function (e) {
       window.stop(); // 相当于点击了浏览器的停止按钮
-      var currentUrl = window.location.pathname;
-      var targetUrl = e.triggerElement.href;
-      var banUrl = [""];
-      if (banUrl[0] != "") {
-        banUrl.forEach(item => {
-          if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-            window.location.href = targetUrl;
-          }
-        });
-      }
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+      
       window.subData = null; // 移除标题（用于一二级导航栏切换处）
       $.fancybox.close();    // 关闭弹窗
       $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
@@ -1196,6 +1267,10 @@
           pjax_valine();
         
         
+        
+        
+        
+          pjax_darkmodejs();
         
       } catch (e) {
         console.log(e);
