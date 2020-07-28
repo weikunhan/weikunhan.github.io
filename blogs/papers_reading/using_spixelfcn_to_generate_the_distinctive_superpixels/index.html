@@ -725,12 +725,12 @@
 </ul>
 <h3 id="1-2-Advantages-优势"><a href="#1-2-Advantages-优势" class="headerlink" title="1.2 Advantages 优势"></a>1.2 Advantages 优势</h3><p>In my opinion, there are two points I can learn from it: </p>
 <ul>
-<li>First, using a fully convolutional network to generate superpixels is an extremely novel. In the future, I can try to use different deep neural networks to generate superpixels. For example, diverse architectures or operators. In this paper, the fully convolutional network is a simple encoder-decoder architecture. I am surprised that why so many researchers could not think of such a simple idea. Most of the time, make complex things more complect may not be a good choice. I should consider the fundamental motivations behind things. For example, in this paper, the author pointed out: “Superpixel is inherently an over-segmentation method. As one of the main purposes of our superpixel method is to perform the detail-preserved downsampling/upsampling to assist the downstream network, it is more important to capture spatial coherence in the local region.” Based on this motivation, the author first inspired an initialization strategy from traditional superpixel algorithms. Then they used a fixed regular grid to find out the local region information rather than compute all pixel-superpixel paris. Finally, using the advantages of a fully convolutional network, superpixel assigned as the highest probability of region pixels. In the end, based on this design idea, it successfully solves inefficient when using deep neural networks to generate superpixels. </li>
+<li>First, using a fully convolutional network to fast generate superpixels by solving primary inefficient issues. In the future, I can try to use different deep neural networks to generate superpixels. For example, diverse architectures or operators. In this paper, the fully convolutional network is a simple encoder-decoder architecture. I am surprised that why so many researchers could not think of such a simple idea. Most of the time, make complex things more complect may not be a good choice. I should consider the fundamental motivations behind things. For example, in this paper, the author pointed out: “Superpixel is inherently an over-segmentation method. As one of the main purposes of our superpixel method is to perform the detail-preserved downsampling/upsampling to assist the downstream network, it is more important to capture spatial coherence in the local region.” Based on this motivation, the author first inspired an initialization strategy from traditional superpixel algorithms. Then they used a fixed regular grid to find out the local region information rather than compute all pixel-superpixel paris. Finally, using the advantages of a fully convolutional network, superpixel assigned as the highest probability of region pixels. In the end, based on this design idea, it successfully solves inefficient when using deep neural networks to generate superpixels. </li>
 <li>Second, the fully convolutional network used to generate superpixels can be more easily combined with many deep neural networks to improve the the overall performance in different computer vision tasks. For example, the author only tried to use superpixels in the dense prediction tasks, which let superpixels assist improve stereo matching performance. Therefore, could this idea be applied to different computer vision tasks to improve related deep neural network performance?</li>
 </ul>
 <p>个人认为，本文有两个地方可以借鉴：</p>
 <ul>
-<li>第一，作者提出的利用卷积网络生成超像素的方式非常新颖。未来可以尝试用更多不同的深度神经网络去生成超像素。比如，不同的结构或者不同的算子。在本文中的全卷积网络是一个编码器-解码器架构。我很好奇，这么通用并且简答的架构，为什么很多研究人员想不到？很多时候，将复杂的结构变的更复杂，可能不如先想明白事情的本质。比如说，作者的在文中指出超像素的本质是：“一种过度分割的方法。其目的是：“为了保留下采样/上采的细节，这样可以辅助下游网络去更好的捕获在某些区域的空间连贯性。”基于这样的目的，作者首先借鉴初始化步骤在传统的超像素生成算法中。其次，利用局部而非全局信息。最后，结合全卷积网络的优势找出局部信息中最有可能点作为超像素的点。这样的设计理念，成功的解决的了用深度神经网络生成超像素的低效问题。</li>
+<li>第一，通过解决主要的低效率问题，使全卷积网络可以快速生成超像素。未来可以尝试用更多不同的深度神经网络去生成超像素。比如，不同的结构或者不同的算子。在本文中的全卷积网络是一个编码器-解码器架构。我很好奇，这么通用并且简答的架构，为什么很多研究人员想不到？很多时候，将复杂的结构变的更复杂，可能不如先想明白事情的本质。比如说，作者的在文中指出超像素的本质是：“一种过度分割的方法。其目的是：“为了保留下采样/上采的细节，这样可以辅助下游网络去更好的捕获在某些区域的空间连贯性。”基于这样的目的，作者首先借鉴初始化步骤在传统的超像素生成算法中。其次，利用局部而非全局信息。最后，结合全卷积网络的优势找出局部信息中最有可能点作为超像素的点。这样的设计理念，成功的解决的了用深度神经网络生成超像素的低效问题。</li>
 <li>第二， 用于生成超像素的全卷积网络，可以更容易的和很多深度神经网络结合，去提升深度神经网络在不同计算机视觉任务中的性能。例如，作者在文本中只在密度预测任务中，尝试用超像素去辅助主流的立体匹配网络提升其性能。所以，是否可以将这样的想法运用到不同计算机视觉任务中，去提升相应的深度神经网络的性能？</li>
 </ul>
 <h3 id="1-3-Disadvantages-劣势"><a href="#1-3-Disadvantages-劣势" class="headerlink" title="1.3 Disadvantages 劣势"></a>1.3 Disadvantages 劣势</h3><p>In my opinion, two points need to pay attention: </p>
@@ -749,15 +749,15 @@
 <p>个人认为，作者提出的第一点和我在之前想的（1.2 优势，第二点）一样。除此以外，我觉得当找到不同的超像素应用场景的时候，可以尝试用更多不同的深度神经网络去生成超像素。比如，不同的结构或者不同的算子（1.2 优势，第一点）。</p>
 <h2 id="2-Highlight-Details-重点细节"><a href="#2-Highlight-Details-重点细节" class="headerlink" title="2 Highlight Details 重点细节"></a>2 Highlight Details 重点细节</h2><h3 id="2-1-SpixelFCN"><a href="#2-1-SpixelFCN" class="headerlink" title="2.1 SpixelFCN"></a>2.1 SpixelFCN</h3><p>The first highlight of this paper is to propose a fully convolutional network to generate superpixels, SpixelFCN. Different from the traditional way of generating superpixels, the fully convolutional network only uses the local information to generate superpixels. The purpose of this is to reduce unnecessary computation. As shown in the figure below, there are many pixels in the green box and only collect the information in the 3 x 3 red boxes area. Finally, by learning a soft association map, the pixels with the highest probability in the 9 grid cells as superpixels. </p>
 <p>本篇论文的第一个亮点是提出了一个全卷积网络生成超像素SpixelFCN。与传统的超像素的生成方式不同，利用全卷积网络生成超像素仅仅关注局部信息。这样做的目的是为了减少不必要的计算。如下图所示，绿框中有很多像素点只收索附近3 x 3红框区域内的信息。最终在9个网格包域中，通过学习到到的一个软关联图，将域中最高概率的像素点设置为超像素点。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_2.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_2.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>Here, the soft association map can be learned as a fully convolutional network with a simple encoder-decoder architecture. As shown in the figure below, a schematic diagram and please refer to the supplementary materials of the paper for information.</p>
 <p>这里的软关联图可以通过一个拥有编码器-解码器架构的全卷积网络学习获得。如下图所示，一个简答的示意图，具体的结构参考原论文的补充材料。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_3.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_3.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>The author also compared with “Superpixel Sampling Networks” (SSN) in ECCV2018. As shown in the figure below, although they both introduced the fully convolutional network into the design, the author in this paper pointed out their architecture has fundamentally different than SSN. The former just uses the fully convolutional network as a tool, and finally uses K-Means to obtain global information to generate superpixels. The method in this paper generates superpixels with only a simple fully convolutional network without other complicated computations.</p>
 <p>作者同时还比较了在ECCV2018中的”Superpixel Sampling Networks”（SSN）。如下图所示，虽然都是引入全卷积网络的想法，但是作者提出的结构和SSN有本质的不用。前者只是把全卷积网络用做一个工具，最后还是要通过K-Means来获取全局信息生成超像素。而后者，仅仅用一个简单的全卷积网络就可以搞定了，不需要其他复杂的计算。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_4.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_4.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>In the paper, a generated superpixel is composed of two vectors. One represents the superpixel attributes, and the other represents the position of the superpixel. As in the following formula:</p>
 <p>论文中，生成的超像素有两个向量组成，一个是代表超像素额属性，另一个代表超像素的位置。如下面公式：</p>
@@ -779,8 +779,8 @@
 <p>继续优化上面的损失函数，可以用一键编码向量来做。如下面公式:</p>
 <img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_9.png' style='width:400px'>
 
-<p>The author did not stop at this point but tried to continue to optimize the network structure. Since the full convolutional network couldn’t lean smoothness of the image, the author introduced the Spatial Propagation (SP) proposed in NIPS2017 “Learning Affinity via Spatial Propagation Networks”. Because of building affinity matrix to propagate information in the full convolutional network, the author called Convolutional Spatial Propagation (CSP). As is the following formula:</p>
-<p>作者并没有点到为止，而是尝试继续优化网络结构。由于普通的全卷积网络不具备学习图像的平滑性的特点，作者这时候引入在NIPS2017“Learning Affinity via Spatial Propagation Networks”中提出的Spatial Propagation（SP）来使得全卷积网络可以学习图像的平滑性，作者这里叫做Convolutional Spatial Propagation（CSP）。如下面公式：</p>
+<p>The author did not stop at this point but tried to continue to optimize the network structure. Since the full convolutional network couldn’t learn the affinity of pixels in the image, the author introduced the Spatial Propagation (SP) proposed by “Learning Affinity via Spatial Propagation Networks” in NIPS2017. Because of building affinity matrix to propagate information in the full convolutional network, the author called Convolutional Spatial Propagation (CSP). As is the following formula:</p>
+<p>作者并没有点到为止，而是尝试继续优化网络结构。由于普通的全卷积网络不具备学习图像中像素的相连性，作者这时候引入在NIPS2017中的“Learning Affinity via Spatial Propagation Networks”。其中的Spatial Propagation（SP）可以使全卷积网络可以学习图片像素点之间的相连性。作者这里叫做Convolutional Spatial Propagation（CSP）。如下面公式：</p>
 <img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_10.png' style='width:400px'>
 
 <p>A slight adjustment is needed above the equation. It should only compare the information of the nearby 3 x 3 red boxes as mentioned earlier. As is the following formula:</p>
@@ -791,7 +791,7 @@
 <p>本篇论文第二个亮点就是将生成的超像素用于后续的密度预测任务，并且有助于得到更好的结果。作者在论文中选择的是具体应用场景是立体匹配。在立体匹配网络中，有四个通道：高，宽，视差，和特征。由于这样的特性，处理这样的信息需要3D卷积来帮忙。在其中，计算视差消耗了大量的的存储空间，导致无法生成高清的结果。为了解决这样的问题，通用额解决思路是做一个视差的回归分析。但是，这样的处理会导致目标边界的模糊和细节的丢失。</p>
 <p>The author proposed to use superpixels as intermediate information to ensure that the regression analysis of disparity will not lose too much information. Therefore, the author used the “Pyramid Stereo Matching Network” (PSMNet) in CVPR2018 as the primary architecture and combined it with SpixelFCN. The author called it SpixelFCN + PSMNet. As shown below.</p>
 <p>所以，作者提出了用超像素作为一个中间信息，去保证视差的回归分析不会导致目标边界的模糊和细节的丢失。作者用了CVPR2018中的“Pyramid Stereo Matching Network”（PSMNet）作为主架构，将生成超像素的全卷积网络与之结合。这个网络就是SpixelFCN + PSMNet。如下图所示。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_12.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_12.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>The overall architecture is not changed too much. It add a downsampling/upsampling scheme based on the predicted superpixels and to integrate it into existing PSMNet. Therefore, the final loss function combines the sum of the losses of the first two networks. As is the following formula:</p>
 <p>整个的架构其实没有太大的改动，就是将上采样网络和下采样网络分开加入到PSMNet中。所以，最后的损失函数结合前两个网络的损失和。如下面公式：</p>
@@ -799,31 +799,31 @@
 
 <h2 id="3-Experimental-results-实验结果"><a href="#3-Experimental-results-实验结果" class="headerlink" title="3 Experimental results 实验结果"></a>3 Experimental results 实验结果</h2><h3 id="3-1-SpixelFCN"><a href="#3-1-SpixelFCN" class="headerlink" title="3.1 SpixelFCN"></a>3.1 SpixelFCN</h3><p>As shown in the figure below, the experiment results for superpixel generated by different algorithms on the BSDS500 dataset. The author provided three evaluation metrics. SpixelFCN and other methods are similar.</p>
 <p>如下图，根据不同的算法生成的超像素实验结果在BSDS500数据集上。作者提供了三个测试的标准，SpixelFCN和其他方法对比都差不多。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_14.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_14.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>As shown in the figure below, the experiment results for superpixel generated by different algorithms on the NYUv2 dataset. The author provided three evaluation metrics. SpixelFCN gets slightly better in the second item.</p>
 <p>如下图，根据不同的算法生成的超像素实验结果在NYUv2数据集上。还是之前三个测试的标准，SpixelFCN第二项上有小幅的提升。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_15.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_15.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>As shown in the figure below, compared to the previous two types of fully convolutional networks, using SpixelFCN to generate superpixels is very fast. The inefficient issue is the primary problem that this paper wants to solve.</p>
 <p>如下图，相比之前两种以全卷积网络的来说，SpixelFCN生成超像素的速度非常快，表现很突出。这也是本论文主要想解决的问题。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_16.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_16.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>As shown in the figure below, by using SpixelFCN to generate superpixels, it indicates that the object boundary becomes cleared and help preserve many details </p>
 <p>如下图，超像素在实际图片中的结果，结果显示可以很好的处理目标边界的模糊和细节的丢失的问题。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_17.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_17.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <h3 id="3-2-SpixelFCN-PSMNet"><a href="#3-2-SpixelFCN-PSMNet" class="headerlink" title="3.2 SpixelFCN + PSMNet"></a>3.2 SpixelFCN + PSMNet</h3><p>As shown in the table below, the author listed the performance of SpixelFCN + PSMNet on SceneFlow and HR-VS dataset. SpixelFCN + PSMNet can provide fewer errors.</p>
 <p>如下表，作者列出SpixelFCN + PSMNet在SceneFlow和HR-VS的数据集上的表现。SpixelFCN + PSMNet可以提供更少的误差。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_18.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_18.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>As shown in the table below, the author listed the performance of SpixelFCN + PSMNet on Middlebury-v3 benchmark. SpixelFCN + PSMNet can provide a better result.</p>
 <p>如下表，作者列出SpixelFCN + PSMNet在Middlebury-v3 benchmark上的表现。同样，SpixelFCN + PSMNet有更出色的表现。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_19.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_19.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 <p>As shown in the figure below, it shows the results of SpixelFCN + PSMNet. The results show that many tiny details can be well captured.</p>
 <p>如下图，最后看看具体超像经过SpixelFCN + PSMNet的结果，结果显示可以很好的捕捉到具体的细节。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，2020 CVPR' style='width:600px'>
+<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
 
           
@@ -836,7 +836,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-27T13:42:53-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-27T18:05:22-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>Update on：Jul 27, 2020</p>
