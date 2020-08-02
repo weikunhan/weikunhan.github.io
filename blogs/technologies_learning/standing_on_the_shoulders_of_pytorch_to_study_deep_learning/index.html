@@ -61,7 +61,9 @@
   
 </head>
 
-<body>
+
+<body oncontextmenu="return popMenu(event);">
+
   
   
   
@@ -78,7 +80,7 @@
     
   </div>
   <div class='b'>
-    <div class='menu navigation featured'>
+    <div class='menu navigation dock'>
       <div class='list-h'>
         
           
@@ -164,7 +166,7 @@
             
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -180,7 +182,7 @@
             
             
               <li>
-                <a class="flat-box" href=/publications
+                <a class="menuitem flat-box" href=/publications
                   
                   
                   
@@ -194,7 +196,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/publications/journal_publications
+                <a class="menuitem flat-box" href=/publications/journal_publications
                   
                   
                   
@@ -216,7 +218,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/publications/conference_publications
+                <a class="menuitem flat-box" href=/publications/conference_publications
                   
                   
                   
@@ -238,7 +240,7 @@
             
             
               <li>
-                <a class="flat-box" href=/projects
+                <a class="menuitem flat-box" href=/projects
                   
                   
                   
@@ -252,7 +254,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -274,7 +276,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -296,7 +298,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -318,7 +320,7 @@
             
             
               <li>
-                <a class="flat-box" href=/courses
+                <a class="menuitem flat-box" href=/courses
                   
                   
                   
@@ -334,7 +336,7 @@
             
             
               <li>
-                <a class="flat-box" href=/awards
+                <a class="menuitem flat-box" href=/awards
                   
                   
                   
@@ -350,7 +352,7 @@
             
             
               <li>
-                <a class="flat-box" href=/blogs
+                <a class="menuitem flat-box" href=/blogs
                   
                   
                   
@@ -384,7 +386,7 @@
               
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -400,7 +402,7 @@
               
             
               <li>
-                <a class="flat-box" href=/publications
+                <a class="menuitem flat-box" href=/publications
                   
                   
                   
@@ -414,7 +416,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/publications/journal_publications
+                <a class="menuitem flat-box" href=/publications/journal_publications
                   
                   
                   
@@ -436,7 +438,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/publications/conference_publications
+                <a class="menuitem flat-box" href=/publications/conference_publications
                   
                   
                   
@@ -458,7 +460,7 @@
               
             
               <li>
-                <a class="flat-box" href=/projects
+                <a class="menuitem flat-box" href=/projects
                   
                   
                   
@@ -472,7 +474,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -494,7 +496,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -516,7 +518,7 @@
                       
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -538,7 +540,7 @@
               
             
               <li>
-                <a class="flat-box" href=/courses
+                <a class="menuitem flat-box" href=/courses
                   
                   
                   
@@ -554,7 +556,7 @@
               
             
               <li>
-                <a class="flat-box" href=/awards
+                <a class="menuitem flat-box" href=/awards
                   
                   
                   
@@ -570,7 +572,7 @@
               
             
               <li>
-                <a class="flat-box" href=/blogs
+                <a class="menuitem flat-box" href=/blogs
                   
                   
                   
@@ -671,7 +673,7 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://weikunhan.github.io/" rel="nofollow">
+  <a class='author' href="https://weikunhan.github.io/" rel="nofollow">
     <img no-lazy src="https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/images/weikun_han_1.png">
     <p>Weikun Han</p>
   </a>
@@ -713,7 +715,7 @@
 
 <h2 id="1-Introduction-开门不见山"><a href="#1-Introduction-开门不见山" class="headerlink" title="1 Introduction 开门不见山"></a>1 Introduction 开门不见山</h2><p>With the development of deep learning, many deep learning frameworks are emerging. Now, the most popular deep learning framework should be PyTorch. The data show that in the 2020 CVPR, PyTorch related papers have four times as much as TensorFlow. After retiring from the company, I finally had an opportunity to try PyTorch. After starting using PyTorch, I just want to say: “I feel so good!”</p>
 <p>随着深度学习发展，深度学习的框架也层出不穷。现在最流行的深度学习框架应该非PyTorch莫属了。有数据显示，在2020的CVPR论文中PyTorch占比是TensorFlow 4 倍。从公司退来之后，终于有机会接触PyTorch。上手PyTorch之后，只能用两个子形容：真香。</p>
-<p>From the upsetting Caffe to the fast and stable TensorFlow, I have treated PyTorch with rose-colored glasses in the past two years of work. To be honest, the previous PyTorch would be more suitable for research, and it didn’t very support the end-to-end model pipeline in the industry (data processing, model training, model testing, and model serving). The current PyTorch is a real leader in the deep learning framework market. First of all,  to understand and customize classes in Pytorch is very easy due to it provides various capsulated classes, you only need inheritance the class that you want. Secondly, all APIs in Pytorch are user-friendly, full-featured, and convenient to use. Moreover, the official documentation is very detailed. There also have many official tutorials. Finally, the PyTorch community helps answer various questions.</p>
+<p>From the upsetting Caffe to the fast and stable TensorFlow, I treated PyTorch with rose-colored glasses in the past two years of work. To be honest, the previous PyTorch would be more suitable for research, and it didn’t very support the end-to-end model pipeline in the industry (data processing, model training, model testing, and model serving). The current PyTorch is a real leader in the deep learning framework market. First of all,  to understand and customize classes in Pytorch is very easy due to it provides various capsulated classes, you only need inheritance the class that you want. Secondly, all APIs in Pytorch are user-friendly, full-featured, and convenient to use. Moreover, the official documentation is very detailed. There also have many official tutorials. Finally, the PyTorch community helps answer various questions.</p>
 <p>在过去工作的两年里，从令人跺脚的Caffe到后来快速稳定的TensorFlow，我一直对PyTorch带着有色眼镜。讲道理，之前的PyTorch还是更适合做研究，对于工业界的一整套东西（数据整合，模型训练，模型验证，模型服务）支持的并不是很理想。现在的PyTorch，可谓是深度学习框架的翘楚。首先，各种类的封装做的没话说，理解和自定义类非常简单。其次，API设计的非常人性，功能很全，使用起来非常方便。最后，官方文档写的很详细，官方教程很多，并且还有PyTorch社区帮忙回答各种问题。</p>
 <div class="note quote">
             <p>The interface of PyTorch is Python, but PyTorch mainly uses C++ to do the implementation. PyTorch uses a paradigm called the imperative style - eager execution. That is to say, each line of code requires the construction of a graph to define a part of the whole computation graph. Even if the overall computation graph has not yet finished, we can also independently execute these small computation graphs as components. This kind of method  for a dynamic computation graph is called define-by-run method  -Synced Tech</p><p>PyTorch的接口是Python，但底层主要都是用C++实现的。PyTorch使用一种称之为 imperative/eager 的范式，即每一行代码都要求构建一个图以定义完整计算图的一个部分。即使完整的计算图还没有完成构建，我们也可以独立地执行这些作为组件的小计算图，这种动态计算图被称为define-by-run方法。- 机器之心 SyncedTech</p>
@@ -723,8 +725,10 @@
 <p>上面这段摘自机器之心对PyTorch基本描述看起来很高大上，其实对同学入门PyTorch并没有太大帮助。但是因为上面这个设计理念，让PyTorch变的清新脱俗。因为大部分入门PyTorch的同学主要关心如何快速上手，所以，这里我就不再对这些高大上的设计理念展开更多的介绍。</p>
 <p>Isaac Newton said: “If I have seen further, it is by standing on the shoulders of giants.” Similarly, PyTorch became so popular because it stands on the shoulders of giants as well. Many people say: “PyTorch’s workflow is very close to  NumPy (scientific computing library in Python).” Therefore, PyTorch is most likely to stand on the shoulders of NumPy. Later, I will explain why PyTorch is by standing on the shoulders of NumPy.</p>
 <p>牛顿说过：“如果我看得更远一点的话，是因为我站在巨人的肩膀上”。 PyTorch之所以能变的如此流行，也是因为站在了巨人的肩上。PyTorch不是闭门造车，更不是从头一点一点开始。很多人说：“PyTorch的工作流程非常接近于Python的科学计算库NumPy”。如此说来，PyTorch站在了NumPy的肩膀上。后面的内容，我会说明为什么PyTorch站在了NumPy的肩膀上。</p>
+<p>As there are many kinds of PyTorch tutorials, I listed some PyTorch learning resources at the end. I hope that students will get what they need for these learning resources. In this blog, I will introduce a way to get started with PyTorch quickly. By studying this learning method as an example,  it is easy to get started with many large open-source projects. In the end, I hope this learning method can help many students.</p>
 <p>由于PyTorch各类教程很多，我在最后列出了一些PyTorch学习资源，希望同学们对这些学习资源各取所需。这篇博客，我以介绍如何快速上手PyTorch为例子，同时介绍一种快速上手大型项目的方法。希望这样的学习方法可以帮助到一些学生。</p>
-<h2 id="2-拨开迷雾见月明"><a href="#2-拨开迷雾见月明" class="headerlink" title="2 拨开迷雾见月明"></a>2 拨开迷雾见月明</h2><p>现在，如果你对PyTorch非常感兴趣，让我带你来走进PyTorch世界。那么，如何快速上手PyTorch，应对实战项目呢？</p>
+<h2 id="2-拨开迷雾见月明"><a href="#2-拨开迷雾见月明" class="headerlink" title="2 拨开迷雾见月明"></a>2 拨开迷雾见月明</h2><p>Now, if you are very interested in PyTorch, let me take you into the world of PyTorch. Here, how to quickly get started with PyTorch and use it for actual projects?</p>
+<p>现在，如果你对PyTorch非常感兴趣，让我带你来走进PyTorch世界。那么，如何快速上手PyTorch，应对实战项目呢？</p>
 <div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
             <p>看官方文档</p>
             </div>
@@ -942,15 +946,15 @@
 <h2 id="6-Study-materials-学习资料"><a href="#6-Study-materials-学习资料" class="headerlink" title="6 Study materials 学习资料"></a>6 Study materials 学习资料</h2><br/> 
 
 <div class="btns circle grid3">
-            <a href='https://pytorch.org/docs/stable/index.html' target="_blank" rel="noopener" title='PyTorch Documentation'><i class='fas fa-book'></i>PyTorch Documentation</a>
-<a href='https://pytorch.org/tutorials/' target="_blank" rel="noopener" title='PyTorch Tutorials'><i class='fas fa-book'></i>PyTorch Tutorials</a>
-<a href='https://pytorch.org/deep-learning-with-pytorch' target="_blank" rel="noopener" title='Deep Learning with PyTorch'><i class='fas fa-book'></i>Deep Learning with PyTorch</a>
+            <a class="button" href='https://pytorch.org/docs/stable/index.html' target="_blank" rel="noopener" title='PyTorch Documentation'><i class='fas fa-book'></i>PyTorch Documentation</a>
+<a class="button" href='https://pytorch.org/tutorials/' target="_blank" rel="noopener" title='PyTorch Tutorials'><i class='fas fa-book'></i>PyTorch Tutorials</a>
+<a class="button" href='https://pytorch.org/deep-learning-with-pytorch' target="_blank" rel="noopener" title='Deep Learning with PyTorch'><i class='fas fa-book'></i>Deep Learning with PyTorch</a>
           </div>
 
 <div class="btns circle grid3">
-            <a href='https://www.coursera.org/learn/deep-neural-networks-with-pytorch' target="_blank" rel="noopener" title='Deep Neural Networks with PyTorch'><i class='fas fa-school'></i>Deep Neural Networks with PyTorch</a>
-<a href='https://github.com/pytorch/examples' target="_blank" rel="noopener" title='PyTorch Examples'><i class='fab fa-github-square'></i>PyTorch Examples</a>
-<a href='https://discuss.pytorch.org/' target="_blank" rel="noopener" title='PyTorch Discuss'><i class='fas fa-comments'></i>PyTorch Discuss</a>
+            <a class="button" href='https://www.coursera.org/learn/deep-neural-networks-with-pytorch' target="_blank" rel="noopener" title='Deep Neural Networks with PyTorch'><i class='fas fa-school'></i>Deep Neural Networks with PyTorch</a>
+<a class="button" href='https://github.com/pytorch/examples' target="_blank" rel="noopener" title='PyTorch Examples'><i class='fab fa-github-square'></i>PyTorch Examples</a>
+<a class="button" href='https://discuss.pytorch.org/' target="_blank" rel="noopener" title='PyTorch Discuss'><i class='fas fa-comments'></i>PyTorch Discuss</a>
           </div>
 
 <h2 id="7-Reference-引用"><a href="#7-Reference-引用" class="headerlink" title="7 Reference 引用"></a>7 Reference 引用</h2><details ><summary> <p>View All 查看全部</p> </summary>
@@ -968,10 +972,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-25T12:19:22-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-29T22:45:16-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Update on：Jul 25, 2020</p>
+    <p>Update on：Jul 29, 2020</p>
   </a>
 </div>
 
@@ -1193,7 +1197,271 @@
   </div>
   <div>
     
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('copy')"
+        
+        
+          id="menu-copy"
+        >
+        <i class='fa fa-copy fa-fw'></i> 复制文本
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+        
+          id="menu-copy-img"
+        >
+        <i class='fa fa-link fa-fw'></i> 复制图片链接
+      </a>
+    </li>
+  
+        
+      
+        
+          <li class='navigation'>
+            <a class='nav icon-only' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+            <a class='nav icon-only' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+            <a class='nav icon-only' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+          </li>
+        
+      
+        
+          <hr>
+        
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function () {
+      return false;
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      // 选中文本
+      if (window.getSelection().toString()) {
+        document.getElementById('menu-copy').style.display = 'block';
+      } else {
+        document.getElementById('menu-copy').style.display = 'none';
+      }
+
+      // 选中图片
+      if (event.toElement.currentSrc) {
+        document.getElementById('menu-copy-img').style.display = 'block';
+        document.getElementById('menu-copy-img').addEventListener("click", function (e) {
+          copyString(event.toElement.currentSrc);
+        });
+      } else {
+        document.getElementById('menu-copy-img').style.display = 'none';
+      }
+
+      // 有音乐播放器
+      if (true == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      console.log(event);
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
 
 
@@ -1255,6 +1523,11 @@
 
 
 
+  <script>
+    let APlayerController = new Object();
+    APlayerController.id = 'Mozart Lang Lang';  // 设定全局音乐播放ID
+    APlayerController.volume = '0.3';
+  </script>
   
     
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
@@ -1266,7 +1539,7 @@
   
 
 
-<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
 
   
   
@@ -1320,8 +1593,8 @@
       meta: meta,
       placeholder: valinePlaceholder,
       path: valinePath,
-      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      appId: "",
+      appKey: "",
       pageSize: '10',
       avatar: 'robohash',
       lang: 'zh-cn',
@@ -1344,62 +1617,6 @@
 
 
 <!-- darkmodejs -->
-
-  
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
-
-  <script type="text/javascript">
-	function getClientHeight(){
-	  var clientHeight=0;
-	  if(document.body.clientHeight&&document.documentElement.clientHeight){
-	  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-	  }else{
-	  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
-	  }
-	  return clientHeight;
-	}
-	function supportCss3(style) {
-		var prefix = ['webkit', 'Moz', 'ms', 'o'],
-		i,
-		humpString = [],
-		htmlStyle = document.documentElement.style,
-		_toHumb = function (string) {
-		return string.replace(/-(\w)/g, function ($0, $1) {
-		return $1.toUpperCase();
-		});
-		};
-		for (i in prefix)
-		humpString.push(_toHumb(prefix[i] + '-' + style));
-		humpString.push(_toHumb(style));
-		for (i in humpString)
-		if (humpString[i] in htmlStyle) return true;
-		return false;
-	};
-	//配置信息
-	var options = {
-	  bottom: '32px',
-	  right: 'unset',
-	  left: '16px',
-	  time: '0s',
-	  mixColor: '#f4f4f4',
-	  backgroundColor: '#f4f4f4',
-	  buttonColorDark: '#100f2c',
-	  buttonColorLight: '#f4f4f4',
-	  saveInCookies: true,
-	  label: '🌓',
-	  autoMatchOsTheme: true
-	};
-	// 卡片兼容处理 mix-blend-mode 与 effect: [shadow, floatable, blur] 冲突???
-	function pjax_darkmodejs(){
-		
-	}
-	// mix-blend-mode support?
-	if(supportCss3('mix-blend-mode')){
-		const darkmode = new Darkmode(options);
-		darkmode.showWidget();
-		pjax_darkmodejs();
-	}
-  </script>
 
 
 <!-- 复制 -->
@@ -1460,23 +1677,6 @@
 
 <!-- scrollreveal -->
 
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    function pjax_scrollrebeal() {
-      ScrollReveal().reveal('.l_main .reveal', {
-        distance: '32px',
-        duration: '800',
-        interval: '20',
-        scale: '1',
-        easing: 'ease-out'
-      });
-    }
-
-    $(function () {
-      pjax_scrollrebeal();
-    });
-  </script>
-
 <!-- ******************************** -->
 
 <!-- fancybox -->
@@ -1485,6 +1685,7 @@
   function pjax_fancybox() {
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
       if ($(this).attr("data-original")) {
@@ -1541,7 +1742,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
 
@@ -1581,7 +1782,6 @@
 
 <div class="pjax-animate">
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
     <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
     <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
     <script>
@@ -1625,7 +1825,7 @@
           });
         }
       } catch (error) {}
-      
+
       window.subData = null; // 移除标题（用于一二级导航栏切换处）
       $.fancybox.close();    // 关闭弹窗
       $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
@@ -1673,8 +1873,6 @@
         
         
         
-          pjax_scrollrebeal();
-        
         
           pjax_initCopyCode();
         
@@ -1684,8 +1882,6 @@
         
         
         
-        
-          pjax_darkmodejs();
         
       } catch (e) {
         console.log(e);
@@ -1701,5 +1897,8 @@
 
     
   </div>
+  
+    <script src="https://cdn.jsdelivr.net/gh/inkss/common@master/hexo/js/cookie.min.js"></script>
+  
 </body>
 </html>
