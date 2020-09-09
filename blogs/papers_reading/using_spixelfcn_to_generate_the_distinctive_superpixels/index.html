@@ -718,8 +718,8 @@
 
 <a id="more"></a> 
 
-<h2 id="1-Overview-综述"><a href="#1-Overview-综述" class="headerlink" title="1 Overview 综述"></a>1 Overview 综述</h2><p>In computer vision, superpixels help to reduce the number of image primitives for subsequent processing. It converts the pixel-level image to the district-level image, which can be treated as the abstraction of original image information. There are many methods to generate superpixels but only have few attempts to generate it using deep neural networks. Recently, the researchers from The Pennsylvania State University proposed using a fully convolutional network to generate superpixels. The paper was published on CVPR2020, and superpixels would become much more popular with this state-of-art method. </p>
-<p>在计算机视觉中，超像素有助于减少用于后续处理的图像基元的数量。 它将像素级别的图像转换为区域级别的图像，可以将其视为原始图像信息的抽象。 生成超像素的方法有很多，但是只有很少的尝试使深度神经网络生成超像素。最近，宾大州立的研究人员提出了使用了全卷积网络来生成超像素的方式，论文发表在CVPR2020中。这种全新的超像素生成方式，给其应用带来更广阔的空间。</p>
+<h2 id="1-Overview-综述"><a href="#1-Overview-综述" class="headerlink" title="1 Overview 综述"></a>1 Overview 综述</h2><p>In computer vision, superpixels help to reduce the number of image primitives for subsequent processing. It converts the pixel-level image to the district-level image, which can be treated as the abstraction of original image information. There are many methods to generate superpixels but only have few attempts to generate it using deep neural networks. Recent paper <em>Superpixel Segmentation with Fully Convolutional Networks</em>, the researchers from The Pennsylvania State University proposed using a fully convolutional network to generate superpixels. The paper was published on CVPR2020, and superpixels would become much more popular with this state-of-art method. </p>
+<p>在计算机视觉中，超像素有助于减少用于后续处理的图像基元的数量。 它将像素级别的图像转换为区域级别的图像，可以将其视为原始图像信息的抽象。 生成超像素的方法有很多，但是只有很少的尝试使深度神经网络生成超像素。最近一篇论文《Superpixel Segmentation with Fully Convolutional Networks》，宾大州立的研究人员提出了使用了全卷积网络来生成超像素的方式，论文发表在CVPR2020中。这种全新的超像素生成方式，给其应用带来更广阔的空间。</p>
 <p>In the paper, the author has pointed out the challenges to use a fully convolutional network to generate superpixels: “The standard convolution operation is defined on regular grids and becomes inefficient when applied to superpixels.” Therefore, the author used a novel method that accelerates the superpixels generation. </p>
 <p>作者在文中指出，使用全卷积生成超像素的挑战在于：“标准卷积运算是在规则网格上定义的，当应用于超像素时其效率会变的很低”。所以本文作者运用了一种更高效的方式，可以使用全卷积网络来快速生成超像素。</p>
 <h3 id="1-1-Summary-概要"><a href="#1-1-Summary-概要" class="headerlink" title="1.1 Summary  概要"></a>1.1 Summary  概要</h3><p>In this paper:</p>
@@ -834,6 +834,14 @@
 <p>如下图，最后看看具体超像经过SpixelFCN + PSMNet的结果，结果显示可以很好的捕捉到具体的细节。</p>
 <img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
 
+<h2 id="4-Note-最后寄语"><a href="#4-Note-最后寄语" class="headerlink" title="4 Note 最后寄语"></a>4 Note 最后寄语</h2><p>Welcome to communicate more with my friends who also like computer vision.</p>
+<p>希望和喜欢计算机视觉的朋友多多交流。</p>
+<h2 id="5-Reference-引用"><a href="#5-Reference-引用" class="headerlink" title="5 Reference 引用"></a>5 Reference 引用</h2><details ><summary> <p>View All 查看全部</p> </summary>
+              <div class='content'>
+              <ul><li>Fengting Yang, Qian Sun, Hailin Jin, Zihan Zhou, Superpixel segmentation with fully convolutional networks, CVPR, 2020</li></ul>
+              </div>
+            </details>
+
 
           
         </div>
@@ -845,10 +853,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-27T22:42:39-07:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-09T01:00:02-07:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Update on：Jul 27, 2020</p>
+    <p>Update on：Sep 9, 2020</p>
   </a>
 </div>
 
@@ -889,7 +897,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Overview-%E7%BB%BC%E8%BF%B0"><span class="toc-text">1 Overview 综述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Summary-%E6%A6%82%E8%A6%81"><span class="toc-text">1.1 Summary  概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Advantages-%E4%BC%98%E5%8A%BF"><span class="toc-text">1.2 Advantages 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Disadvantages-%E5%8A%A3%E5%8A%BF"><span class="toc-text">1.3 Disadvantages 劣势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Future-%E5%90%8E%E7%BB%AD"><span class="toc-text">1.4 Future 后续</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Highlight-Details-%E9%87%8D%E7%82%B9%E7%BB%86%E8%8A%82"><span class="toc-text">2 Highlight Details 重点细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-SpixelFCN"><span class="toc-text">2.1 SpixelFCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-SpixelFCN-PSMNet"><span class="toc-text">2.2 SpixelFCN + PSMNet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Experimental-results-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">3 Experimental results 实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-SpixelFCN"><span class="toc-text">3.1 SpixelFCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-SpixelFCN-PSMNet"><span class="toc-text">3.2 SpixelFCN + PSMNet</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Overview-%E7%BB%BC%E8%BF%B0"><span class="toc-text">1 Overview 综述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Summary-%E6%A6%82%E8%A6%81"><span class="toc-text">1.1 Summary  概要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Advantages-%E4%BC%98%E5%8A%BF"><span class="toc-text">1.2 Advantages 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Disadvantages-%E5%8A%A3%E5%8A%BF"><span class="toc-text">1.3 Disadvantages 劣势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Future-%E5%90%8E%E7%BB%AD"><span class="toc-text">1.4 Future 后续</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Highlight-Details-%E9%87%8D%E7%82%B9%E7%BB%86%E8%8A%82"><span class="toc-text">2 Highlight Details 重点细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-SpixelFCN"><span class="toc-text">2.1 SpixelFCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-SpixelFCN-PSMNet"><span class="toc-text">2.2 SpixelFCN + PSMNet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Experimental-results-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">3 Experimental results 实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-SpixelFCN"><span class="toc-text">3.1 SpixelFCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-SpixelFCN-PSMNet"><span class="toc-text">3.2 SpixelFCN + PSMNet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Note-%E6%9C%80%E5%90%8E%E5%AF%84%E8%AF%AD"><span class="toc-text">4 Note 最后寄语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Reference-%E5%BC%95%E7%94%A8"><span class="toc-text">5 Reference 引用</span></a></li></ol>
     </div>
   </section>
 
