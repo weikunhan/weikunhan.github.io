@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0'>
+<html lang="en">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
     
   
   <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -20,6 +23,8 @@
   
 
   
+    <meta name="description" content="Paper Link: https://arxiv.org/abs/2003.12929，Code Liink: https://github.com/fuy34/superpixel_fcn">
+  
 
   <!-- feed -->
   
@@ -30,23 +35,10 @@
   <!-- link -->
   
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
 
   
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
-
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-  
-
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
 
   
 
@@ -68,90 +60,22 @@
 
   
 
-  
-  
+  <script id="loadcss"></script>
+
 </head>
 
 <body>
   
-  
-  
-  <div class="cover-wrapper">
-    <cover class='cover page' style="display: none;">
-      <div class='cover-body'>
-  <div class='a'>
-    
-    
-      <p class="title">Weikun Han</p>
-    
-    
-      <p class="subtitle">「Computer Vision Scientist」</p>
-    
-  </div>
-  <div class='b'>
-    <div class='menu navigation dock'>
-      <div class='list-h'>
-        
-          
-            <a href="/"
-              
-              
-              id="home">
-              <i class='fas fa-home fa-fw'></i><p>Home</p>
-            </a>
-          
-            <a href="/publications"
-              
-              
-              id="publications">
-              <i class='fas fa-file-alt fa-fw'></i><p>Publications</p>
-            </a>
-          
-            <a href="/projects"
-              
-              
-              id="projects">
-              <i class='fas fa-robot fa-fw'></i><p>Projects</p>
-            </a>
-          
-            <a href="/courses"
-              
-              
-              id="courses">
-              <i class='fas fa-graduation-cap fa-fw'></i><p>Courses</p>
-            </a>
-          
-            <a href="/awards"
-              
-              
-              id="awards">
-              <i class='fas fa-trophy fa-fw'></i><p>Awards</p>
-            </a>
-          
-            <a href="/blogs"
-              
-              
-              id="blogs">
-              <i class='fas fa-blog fa-fw'></i><p>Blogs</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
 
-      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-    </cover>
-    <header class="l_header shadow blur floatable">
+<header id="l_header" class="l_header auto shadow blur floatable " style='opacity: 0' >
   <div class='container'>
-  <div class='wrapper'>
+  <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -191,64 +115,6 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications
-                  
-                  
-                  
-                    id="publications"
-                  >
-                  <i class='fas fa-file-alt fa-fw'></i>Publications
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications/journal_publications
-                  
-                  
-                  
-                    id="publicationsjournal_publications"
-                  >
-                  Journal Publications
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications/conference_publications
-                  
-                  
-                  
-                    id="publicationsconference_publications"
-                  >
-                  Conference Publications
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/projects
                   
                   
@@ -256,6 +122,22 @@
                     id="projects"
                   >
                   <i class='fas fa-robot fa-fw'></i>Projects
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/publications
+                  
+                  
+                  
+                    id="publications"
+                  >
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
                 </a>
                 
               </li>
@@ -347,56 +229,14 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications
+                <a class="menuitem flat-box faa-parent animated-hover" href=/projects
                   
                   
                   
-                    id="publications"
+                    id="projects"
                   >
-                  <i class='fas fa-file-alt fa-fw'></i>Publications
+                  <i class='fas fa-robot fa-fw'></i>Projects
                 </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications/journal_publications
-                  
-                  
-                  
-                    id="publicationsjournal_publications"
-                  >
-                  Journal Publications
-                </a>
-                
-              </li>
-            
-          
-                    
-                      
-            
-              <hr>
-            
-          
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/publications/conference_publications
-                  
-                  
-                  
-                    id="publicationsconference_publications"
-                  >
-                  Conference Publications
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
                 
               </li>
             
@@ -405,13 +245,13 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/projects
+                <a class="menuitem flat-box faa-parent animated-hover" href=/publications
                   
                   
                   
-                    id="projects"
+                    id="publications"
                   >
-                  <i class='fas fa-robot fa-fw'></i>Projects
+                  <i class='fas fa-file-alt fa-fw'></i>Publications
                 </a>
                 
               </li>
@@ -474,93 +314,109 @@
   </div>
 </header>
 
-  </div>
+  <div id="l_body">
+    <div id="l_cover">
   
+    
+        <div id="half" class='cover-wrapper page focus' style="display: ;">
+          
+            <div id='cover-backstretch'></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Weikun Han</p>
+    
+    
+      <p class="subtitle">「Computer Vision Scientist」</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>Home</p>
+            </a>
+          
+            <a href="/projects"
+              
+              
+              id="projects">
+              <i class='fas fa-robot fa-fw'></i><p>Projects</p>
+            </a>
+          
+            <a href="/publications"
+              
+              
+              id="publications">
+              <i class='fas fa-file-alt fa-fw'></i><p>Publications</p>
+            </a>
+          
+            <a href="/courses"
+              
+              
+              id="courses">
+              <i class='fas fa-graduation-cap fa-fw'></i><p>Courses</p>
+            </a>
+          
+            <a href="/awards"
+              
+              
+              id="awards">
+              <i class='fas fa-trophy fa-fw'></i><p>Awards</p>
+            </a>
+          
+            <a href="/blogs"
+              
+              
+              id="blogs">
+              <i class='fas fa-blog fa-fw'></i><p>Blogs</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
 
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
 
-  <div class="l_body">
-    <div class='body-wrapper' id="pjax-container">
-      
-        <!--此文件用来存放一些不方便取值的变量--> 
-<!--思路大概是将值藏到重加载的区域内--> 
- 
- 
- 
-<div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
-  <div id="pjax-enable-cover">true</div> 
-  <div id="pjax-comment-path">none</div> 
-  <div id="pjax-comment-placeholder">none</div> 
-</div> 
- 
- 
-<script> 
-  // 处理封面 此时 jquery 还没加载 
-  if ("blog" == "none") { // 移除封面 
-    document.getElementsByClassName('cover')[0].style.display = "none"; 
-    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
-  } else { 
-    if ("blog" == "blog") { // 半屏 
-      document.getElementsByClassName('cover')[0].classList.remove("full"); 
-      document.getElementsByClassName('cover')[0].classList.add("half"); 
-      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("blog" == "docs") { // 全屏 
-      document.getElementsByClassName('cover')[0].classList.remove("half"); 
-      document.getElementsByClassName('cover')[0].classList.add("full"); 
-      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
-    } 
-    document.getElementsByClassName('cover')[0].style.display = ""; 
-    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
-    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
-  } 
-</script> 
-
-      
-      
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
   
 
+
   
-    <article id="page" class="post white-box reveal shadow article-type-page" itemscope itemprop="blogPost">
-      
-
-
-  <section class='meta'>
+  <div class="article-meta" id="top">
     
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h1 class="title">
-    <a href="/blogs/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/index.html">
-      CVPR 2020 | Using SpixelFCN to Generate the Distinctive Superpixels
-    </a>
-  </h1>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-        </div>
-        
-          <hr>
+    
+    
+      <h1 class="title">
+        CVPR 2020 | Using SpixelFCN to Generate the Distinctive Superpixels
+      </h1>
+      <div class='new-meta-box'>
         
       </div>
     
-  </section>
+  </div>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_1.png' alt='Paper Link: https://arxiv.org/abs/2003.12929，Code Liink: https://github.com/fuy34/superpixel_fcn' style='width:600px'>
+  
+  <div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_1.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_1.png" srcset="data:image/png;base64,666" alt="Paper Link: https://arxiv.org/abs/2003.12929，Code Liink: https://github.com/fuy34/superpixel_fcn" style="width:600px;"/></div><span class="image-caption">Paper Link: https://arxiv.org/abs/2003.12929，Code Liink: https://github.com/fuy34/superpixel_fcn</span></div>
 
 <a id="more"></a> 
 
@@ -604,124 +460,112 @@
 <p>个人认为，作者提出的第一点和我在之前想的（1.2 优势，第二点）一样。除此以外，我觉得当找到不同的超像素应用场景的时候，可以尝试用更多不同的深度神经网络去生成超像素。比如，不同的结构或者不同的算子（1.2 优势，第一点）。</p>
 <h2 id="2-Highlight-Details-重点细节"><a href="#2-Highlight-Details-重点细节" class="headerlink" title="2 Highlight Details 重点细节"></a>2 Highlight Details 重点细节</h2><h3 id="2-1-SpixelFCN"><a href="#2-1-SpixelFCN" class="headerlink" title="2.1 SpixelFCN"></a>2.1 SpixelFCN</h3><p>The first highlight of this paper is to propose a fully convolutional network to generate superpixels, SpixelFCN. Different from the traditional way of generating superpixels, the fully convolutional network only uses the local information to generate superpixels. The purpose of this is to reduce unnecessary computation. As shown in the figure below, there are many pixels in the green box and only collect the information in the 3 x 3 red boxes area. Finally, by learning a soft association map, the pixels with the highest probability in the 9 grid cells as superpixels. </p>
 <p>本篇论文的第一个亮点是提出了一个全卷积网络生成超像素SpixelFCN。与传统的超像素的生成方式不同，利用全卷积网络生成超像素仅仅关注局部信息。这样做的目的是为了减少不必要的计算。如下图所示，绿框中有很多像素点只收索附近3 x 3红框区域内的信息。最终在9个网格包域中，通过学习到到的一个软关联图，将域中最高概率的像素点设置为超像素点。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_2.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_2.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_2.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>Here, the soft association map can be learned as a fully convolutional network with a simple encoder-decoder architecture. As shown in the figure below, a schematic diagram and please refer to the supplementary materials of the paper for information.</p>
 <p>这里的软关联图可以通过一个拥有编码器-解码器架构的全卷积网络学习获得。如下图所示，一个简答的示意图，具体的结构参考原论文的补充材料。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_3.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_3.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_3.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>The author also compared with “Superpixel Sampling Networks” (SSN) in ECCV2018. As shown in the figure below, although they both introduced the fully convolutional network into the design, the author in this paper pointed out their architecture has fundamentally different than SSN. The former just uses the fully convolutional network as a tool, and finally uses K-Means to obtain global information to generate superpixels. The method in this paper generates superpixels with only a simple fully convolutional network without other complicated computations.</p>
 <p>作者同时还比较了在ECCV2018中的”Superpixel Sampling Networks”（SSN）。如下图所示，虽然都是引入全卷积网络的想法，但是作者提出的结构和SSN有本质的不用。前者只是把全卷积网络用做一个工具，最后还是要通过K-Means来获取全局信息生成超像素。而后者，仅仅用一个简单的全卷积网络就可以搞定了，不需要其他复杂的计算。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_4.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_4.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_4.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>In the paper, a generated superpixel is composed of two vectors. One represents the superpixel attributes, and the other represents the position of the superpixel. As in the following formula:</p>
 <p>论文中，生成的超像素有两个向量组成，一个是代表超像素额属性，另一个代表超像素的位置。如下面公式：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_5.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_5.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_5.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>The pixels can be reconstructed through the above two vectors. As is the following formula:</p>
 <p>通过这向量可以重建像素点，如如下面公式：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_6.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_6.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_6.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>Finally, the original pixels and reconstructed pixels can be written as a loss function. As in the following formula, the first term represents similarity, and the second term represents compactness of space:</p>
 <p>最后可以将原始像素点和重建像素点，写成一个损失函数。如下面公式，第一项代表相似性，第二项代表空间的紧凑性：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_7.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_7.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_7.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>In addition, the author also tried to use the CIELAB color vector and L2 norm to write a new loss function. At the same time, the author pointed out that this is very similar to Simple Linear Iterative Clustering (SLIC). As is the following formula:</p>
 <p>除此以外，作者还尝试用CIELAB色彩向量和L2模去计算。同时，作者指出这么做和Simple Linear Iterative Clustering（SLIC）就非常相似了。如下面公式:</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_8.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_8.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_8.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>Keep simplifying the above loss function, which can be done with the one-hot encoding vector of semantic labels. As is the following formula:</p>
 <p>继续优化上面的损失函数，可以用一键编码向量来做。如下面公式:</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_9.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_9.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_9.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>The author did not stop at this point but tried to continue to optimize the network structure. Since the full convolutional network couldn’t learn the affinity of pixels in the image, the author introduced the Spatial Propagation (SP) proposed by “Learning Affinity via Spatial Propagation Networks” in NIPS2017. Because of building affinity matrix to propagate information in the full convolutional network, the author called Convolutional Spatial Propagation (CSP). As is the following formula:</p>
 <p>作者并没有点到为止，而是尝试继续优化网络结构。由于普通的全卷积网络不具备学习图像中像素的相连性，作者这时候引入在NIPS2017中的“Learning Affinity via Spatial Propagation Networks”。其中的Spatial Propagation（SP）可以使全卷积网络可以学习图片像素点之间的相连性。作者这里叫做Convolutional Spatial Propagation（CSP）。如下面公式：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_10.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_10.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_10.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>A slight adjustment is needed above the equation. It should only compare the information of the nearby 3 x 3 red boxes as mentioned earlier. As is the following formula:</p>
 <p>这里需要稍作调整，应为之前提到只对比附近3 x 3红框区域信息。所以，如下面公式：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_11.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_11.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_11.png" srcset="data:image/png;base64,666"/></div></div>
 
 <h3 id="2-2-SpixelFCN-PSMNet"><a href="#2-2-SpixelFCN-PSMNet" class="headerlink" title="2.2 SpixelFCN + PSMNet"></a>2.2 SpixelFCN + PSMNet</h3><p>The second highlight of this paper is to use the generated superpixels for subsequent density prediction tasks, which can help get better results. Especially, the paper mainly focuses on the stereo matching. In the stereo matching network, there are four channels: height, width, disparity, and feature. To aggregate that information, 3D convolution is required. And, the overall computation consumes large amounts of memory because of the extra “disparity” dimension. In order to generate high-definition results, the general solution is to do a regression analysis of disparity. However, such processing will result in blurring of the object boundary and loss of many details.</p>
 <p>本篇论文第二个亮点就是将生成的超像素用于后续的密度预测任务，并且有助于得到更好的结果。作者在论文中选择的是具体应用场景是立体匹配。在立体匹配网络中，有四个通道：高，宽，视差，和特征。由于这样的特性，处理这样的信息需要3D卷积来帮忙。在其中，计算视差消耗了大量的的存储空间，导致无法生成高清的结果。为了解决这样的问题，通用额解决思路是做一个视差的回归分析。但是，这样的处理会导致目标边界的模糊和细节的丢失。</p>
 <p>The author proposed to use superpixels as intermediate information to ensure that the regression analysis of disparity will not lose too much information. Therefore, the author used the “Pyramid Stereo Matching Network” (PSMNet) in CVPR2018 as the primary architecture and combined it with SpixelFCN. The author called it SpixelFCN + PSMNet. As shown below.</p>
 <p>所以，作者提出了用超像素作为一个中间信息，去保证视差的回归分析不会导致目标边界的模糊和细节的丢失。作者用了CVPR2018中的“Pyramid Stereo Matching Network”（PSMNet）作为主架构，将生成超像素的全卷积网络与之结合。这个网络就是SpixelFCN + PSMNet。如下图所示。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_12.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_12.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_12.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>The overall architecture is not changed too much. It add a downsampling/upsampling scheme based on the predicted superpixels and to integrate it into existing PSMNet. Therefore, the final loss function combines the sum of the losses of the first two networks. As is the following formula:</p>
 <p>整个的架构其实没有太大的改动，就是将上采样网络和下采样网络分开加入到PSMNet中。所以，最后的损失函数结合前两个网络的损失和。如下面公式：</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_13.png' style='width:400px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_13.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_13.png" srcset="data:image/png;base64,666"/></div></div>
 
 <h2 id="3-Experimental-results-实验结果"><a href="#3-Experimental-results-实验结果" class="headerlink" title="3 Experimental results 实验结果"></a>3 Experimental results 实验结果</h2><h3 id="3-1-SpixelFCN"><a href="#3-1-SpixelFCN" class="headerlink" title="3.1 SpixelFCN"></a>3.1 SpixelFCN</h3><p>As shown in the figure below, the experiment results for superpixel generated by different algorithms on the BSDS500 dataset. The author provided three evaluation metrics. SpixelFCN and other methods are similar.</p>
 <p>如下图，根据不同的算法生成的超像素实验结果在BSDS500数据集上。作者提供了三个测试的标准，SpixelFCN和其他方法对比都差不多。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_14.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_14.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_14.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>As shown in the figure below, the experiment results for superpixel generated by different algorithms on the NYUv2 dataset. The author provided three evaluation metrics. SpixelFCN gets slightly better in the second item.</p>
 <p>如下图，根据不同的算法生成的超像素实验结果在NYUv2数据集上。还是之前三个测试的标准，SpixelFCN第二项上有小幅的提升。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_15.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_15.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_15.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>As shown in the figure below, compared to the previous two types of fully convolutional networks, using SpixelFCN to generate superpixels is very fast. The inefficient issue is the primary problem that this paper wants to solve.</p>
 <p>如下图，相比之前两种以全卷积网络的来说，SpixelFCN生成超像素的速度非常快，表现很突出。这也是本论文主要想解决的问题。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_16.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_16.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_16.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>As shown in the figure below, by using SpixelFCN to generate superpixels, it indicates that the object boundary becomes cleared and help preserve many details </p>
 <p>如下图，超像素在实际图片中的结果，结果显示可以很好的处理目标边界的模糊和细节的丢失的问题。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_17.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_17.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_17.png" srcset="data:image/png;base64,666"/></div></div>
 
 <h3 id="3-2-SpixelFCN-PSMNet"><a href="#3-2-SpixelFCN-PSMNet" class="headerlink" title="3.2 SpixelFCN + PSMNet"></a>3.2 SpixelFCN + PSMNet</h3><p>As shown in the table below, the author listed the performance of SpixelFCN + PSMNet on SceneFlow and HR-VS dataset. SpixelFCN + PSMNet can provide fewer errors.</p>
 <p>如下表，作者列出SpixelFCN + PSMNet在SceneFlow和HR-VS的数据集上的表现。SpixelFCN + PSMNet可以提供更少的误差。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_18.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_18.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_18.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>As shown in the table below, the author listed the performance of SpixelFCN + PSMNet on Middlebury-v3 benchmark. SpixelFCN + PSMNet can provide a better result.</p>
 <p>如下表，作者列出SpixelFCN + PSMNet在Middlebury-v3 benchmark上的表现。同样，SpixelFCN + PSMNet有更出色的表现。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_19.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_19.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_19.png" srcset="data:image/png;base64,666"/></div></div>
 
 <p>As shown in the figure below, it shows the results of SpixelFCN + PSMNet. The results show that many tiny details can be well captured.</p>
 <p>如下图，最后看看具体超像经过SpixelFCN + PSMNet的结果，结果显示可以很好的捕捉到具体的细节。</p>
-<img src='/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png' alt='Fengting Yang，et al.，Superpixel Segmentation with Fully Convolutional Networks，CVPR 2020' style='width:600px'>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png" class="lazyload" data-srcset="/images/papers_reading/using_spixelfcn_to_generate_the_distinctive_superpixels/image_20.png" srcset="data:image/png;base64,666"/></div></div>
 
 <h2 id="4-Note-最后寄语"><a href="#4-Note-最后寄语" class="headerlink" title="4 Note 最后寄语"></a>4 Note 最后寄语</h2><p>Welcome to communicate more with my friends who also like computer vision.</p>
 <p>希望和喜欢计算机视觉的朋友多多交流。</p>
-<h2 id="5-Reference-引用"><a href="#5-Reference-引用" class="headerlink" title="5 Reference 引用"></a>5 Reference 引用</h2><details ><summary> <p>View All 查看全部</p> </summary>
+<h2 id="5-Reference-引用"><a href="#5-Reference-引用" class="headerlink" title="5 Reference 引用"></a>5 Reference 引用</h2><details ><summary> View All 查看全部 </summary>
               <div class='content'>
               <ul><li>Fengting Yang, Qian Sun, Hailin Jin, Zihan Zhou, Superpixel segmentation with fully convolutional networks, CVPR, 2020</li></ul>
               </div>
             </details>
 
 
-          
-        </div>
-        
-          
+  
+  
+  
+    
 
 
-  <section class='meta' id="footer-meta">
+  <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
       
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-27T11:25:16-07:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>Update on：Sep 27, 2020</p>
-  </a>
-</div>
-
-        
-      
     </div>
-  </section>
+  </div>
 
 
-        
-        
-      </section>
-    </article>
+  
   
 
+  
+</article>
 
 
 
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
 </div>
@@ -755,10 +599,29 @@
 
 
 
-    </div>
-    
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=false;
+  pdata.postTitle="";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
   
-  <footer class="clearfix">
+  l_header.classList.remove("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
     <br><br>
     
       
@@ -773,7 +636,7 @@
       loop='all'
       order='random'
       fixed='false'
-      list-max-height='340px'
+      list-max-height='320px'
       server='tencent'
       type='search'
       id='Mozart Lang Lang'
@@ -794,6 +657,7 @@
                 class="social fas fa-envelope-square flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -802,6 +666,7 @@
                 class="social fas fa-pen-square flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -810,6 +675,7 @@
                 class="social fab fa-github-square flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -818,6 +684,7 @@
                 class="social fab fa-linkedin flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -826,6 +693,7 @@
                 class="social fab fa-medium flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -834,6 +702,7 @@
                 class="social fas fa-id-card flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -842,6 +711,7 @@
                 class="social fas fa-file-download flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
+                
               </a>
             
           
@@ -850,16 +720,20 @@
     
       
         Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0" target="_blank" class="codename">Volantis</a>
-        as theme, total visits
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          times
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.1" target="_blank" class="codename">Volantis</a>
+        as theme
+      
+    
+      
+        
+          <div><p><span id="lc-sv">Total visits <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> times</span></p>
+</div>
         
       
     
       
         <div class='copyright'>
-        <p><a href="https://weikunhan.github.io/">Copyright © 2020 Weikun Han</a></p>
+        <p>Copyright © 2020 Weikun Han</p>
 
         </div>
       
@@ -867,27 +741,138 @@
   </footer>
 
 
-    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
   </div>
   <div>
-    
-    
+    <script>
+window.volantis={};
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<!-- required -->
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
 
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
 
 
-  <script>
-    
-    var SEARCH_SERVICE = "hexo" || "hexo";
-    var ROOT = "/" || "/";
-    if (!ROOT.endsWith('/')) ROOT += '/';
-  </script>
-
-
-
-  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-
-
+<!-- internal -->
 
   
   
@@ -896,7 +881,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
 
     <script type="text/javascript">
-      $(function(){
         var imgs=["https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_A2.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_B1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_C1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D1.jpeg", "https://cdn.jsdelivr.net/gh/weikunhan/cdn-documents@latest/wallpapers/abstract_D2.jpeg"];
         if ('true' == 'true') {
           function shuffle(arr){
@@ -911,41 +895,91 @@
           }
           shuffle(imgs);
         }
-        if ('.cover') {
-          $('.cover').backstretch(
+	  function Pjax_backstretch(){
+        
+          $('#cover-backstretch').backstretch(
             imgs,
           {
             duration: "30000",
             fade: "1500"
           });
-        } else {
-          $.backstretch(
-            imgs,
-          {
-            duration: "30000",
-            fade: "1500"
-          });
-        }
-      });
+        
+	  }
+	  loadScript("https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js",Pjax_backstretch)
     </script>
   
 
 
 
-  <script>
-    let APlayerController = new Object();
-    APlayerController.id = 'Mozart Lang Lang';  // 设定全局音乐播放ID
-    APlayerController.volume = '0.3';
-  </script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
   
-    
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = 'Mozart Lang Lang';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.3';
+</script>
+
+  
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
 
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
 
   
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+
+
 
 
 
@@ -987,20 +1021,22 @@
   }
 
   function pjax_valine() {
-    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
-      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+    if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let ALLPATH = '';
-    if(ALLPATH != '') pageUrl = ALLPATH;
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
 
     var valine = new Valine();
     valine.init({
       el: '#valine_container',
       meta: meta,
       placeholder: pagePlaceholder,
-      path: pageUrl,
+      path: path,
       appId: "",
       appKey: "",
       pageSize: '10',
@@ -1010,6 +1046,7 @@
       highlight: 'true',
       mathJax: 'false',
       enableQQ: 'true',
+      recordIP: 'false',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
       emojiMaps: emojiMaps
@@ -1023,134 +1060,6 @@
 
 
 
-
-<!-- darkmodejs -->
-
-
-<!-- 复制 -->
-
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-    var clipboard = new ClipboardJS('.btn-copy', {
-        target: function (trigger) {
-            return trigger.nextElementSibling
-        }
-    });
-    function wait(callback, seconds) {
-        var timelag = null;
-        timelag = window.setTimeout(callback, seconds)
-    }
-    function pjax_initCopyCode() {
-        var copyHtml = '';
-        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
-        copyHtml += '</button>';
-        $(".highlight .code pre").before(copyHtml);
-        $(".article pre code").before(copyHtml);
-        clipboard.off('success').on('success', function (e) {
-            let $btn = $(e.trigger);
-            $btn.addClass('copied');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-check-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPIED';
-            wait(function () {
-                $icon.removeClass('fa-check-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        });
-        clipboard.off('error').on('error', function (e) {
-            e.clearSelection();
-            let $btn = $(e.trigger);
-            $btn.addClass('copy-failed');
-            let $icon = $($btn.find('i'));
-            $icon.removeClass('fa-copy');
-            $icon.addClass('fa-times-circle');
-            let $span = $($btn.find('span'));
-            $span[0].innerText = 'COPY FAILED';
-            wait(function () {
-                $icon.removeClass('fa-times-circle');
-                $icon.addClass('fa-copy');
-                $span[0].innerText = 'COPY'
-            }, 2000)
-        })
-    }
-    $(function () {
-        pjax_initCopyCode()
-    });
-</script>
-
-
-<!-- scrollreveal -->
-
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    function pjax_scrollrebeal() {
-      ScrollReveal().reveal('.l_main .reveal', {
-        distance: '32px',
-        duration: '800',
-        interval: '20',
-        scale: '1',
-        easing: 'ease-out'
-      });
-    }
-
-    $(function () {
-      pjax_scrollrebeal();
-    });
-  </script>
-
-<!-- ******************************** -->
-
-<!-- fancybox -->
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script>
-  function pjax_fancybox() {
-    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".article-entry").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  $(function () {
-    pjax_fancybox();
-  });
-</script>
-
-<!-- ******************************** -->
 
 
   
@@ -1166,29 +1075,433 @@
   
 
 
+<!-- optional -->
 
-  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
-
-
-
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
   
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script type="text/javascript">
-    $(function () {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
     });
-  </script>
+  
+})(jQuery);
+
+</script>
 
 
 
 
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://weikunhan.github.io' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://weikunhan.github.io' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://weikunhan.github.io' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+$("#wrapper .darkbtn").parents(".header").addClass("toggle-mode-btn")
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+var now = new Date();
+var hour = now.getHours();
+if (hour < 7 && hour >= 19) {
+	var mode = toggleCustomDarkMode();
+	if (mode === "dark") {
+	  applyCustomDarkModeSettings(mode);
+	}
+}
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
 
 
 
@@ -1223,6 +1536,7 @@
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
         selectors: [
           "title",
+          "#l_cover",
           "#pjax-container",
           "#pjax-header-nav-list"
         ],
@@ -1232,7 +1546,7 @@
     });
 
     document.addEventListener('pjax:send', function (e) {
-      window.stop(); // 相当于点击了浏览器的停止按钮
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
       try {
         var currentUrl = window.location.pathname;
@@ -1248,13 +1562,15 @@
       } catch (error) {}
 
       window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      $.fancybox.close();    // 关闭弹窗
-      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
-      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
       // 解绑事件 避免重复监听
-      $('.s-top').unbind('click');
+      volantis.$topBtn.unbind('click');
       $('.menu a').unbind('click');
       $(window).unbind('resize');
       $(window).unbind('scroll');
@@ -1280,27 +1596,21 @@
       $('script[data-pjax], .pjax-reload script').each(function () {
         $(this).parent().append($(this).remove());
       });
-
       try{
-        pjax_fancybox();
-        
-          
-          if ('.cover') {
-            $('.cover').backstretch("resize");
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
           } else {
-            $.backstretch("resize");
+            pjax_fancybox();
           }
         
+		  Pjax_backstretch()
         
         
-          pjax_scrollrebeal();
         
         
-          pjax_initCopyCode();
         
         
           pjax_valine();
-        
         
         
         
